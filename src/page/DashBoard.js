@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+
+import { observer, inject } from 'mobx-react'
 import { Container, Icon, Header, Content, ListItem, CheckBox, Text, Body, Left, Button, Title, Right } from 'native-base';
 
 class DashBoard extends Component {
 
     render() {
+        const {
+            rootStore: { routerStore }
+        } = this.props
+
         return (<Container>
             <Header>
                 <Left>
@@ -12,7 +18,7 @@ class DashBoard extends Component {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Header</Title>
+                    <Title>DashBoard</Title>
                 </Body>
                 <Right>
                     <Button transparent>
@@ -20,7 +26,11 @@ class DashBoard extends Component {
                     </Button>
                 </Right>
             </Header>
-            <Text>Haha</Text></Container>);
+            <Content>
+                <Button onPress={() => {alert("This is Card Header");routerStore.goTo('setting');}}>
+                    <Text>Click Me!</Text>
+                </Button>
+            </Content></Container>);
     }
 }
-export default DashBoard;
+export default inject('rootStore')(DashBoard);

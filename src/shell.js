@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
 import { RouterView } from 'mobx-state-router'
 import DashBoard from './page/DashBoard'
+import SettingPage from './page/SettingPage'
 import { Container } from 'native-base';
 
 
 const viewMap = {
-  dashboard: <DashBoard />
+  dashboard: <DashBoard />,
+  setting: <SettingPage />
 }
 
 class ShellBase extends React.Component {
