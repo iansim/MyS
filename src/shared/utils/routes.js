@@ -5,5 +5,8 @@ export const routes = [
   },{
     name: 'setting',
     pattern: '/setting'
+  },{
+    name: 'trader',
+    pattern: '/trader'
   }
 ]

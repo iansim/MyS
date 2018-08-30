@@ -26,7 +26,7 @@ class SettingPage extends Component {
                 </Right>
             </Header>
             <Content>
-                <Button onPress={() => {alert("This is Card Header");routerStore.goTo('dashboard');}}>
+                <Button onPress={() => {alert("This is Card Header");routerStore.goTo('trader');}}>
                     <Text>Click Me!</Text>
                 </Button>
             </Content></Container>);

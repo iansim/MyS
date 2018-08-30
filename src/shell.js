@@ -4,12 +4,14 @@ import { inject } from 'mobx-react'
 import { RouterView } from 'mobx-state-router'
 import DashBoard from './page/DashBoard'
 import SettingPage from './page/SettingPage'
+import TraderPage from './page/TraderPage'
 import { Container } from 'native-base';
 
 
 const viewMap = {
   dashboard: <DashBoard />,
-  setting: <SettingPage />
+  setting: <SettingPage />,
+  trader: <TraderPage />
 }
 
 class ShellBase extends React.Component {

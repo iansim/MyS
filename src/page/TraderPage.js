@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import { Container, Icon, Header, Content, ListItem, CheckBox, Text, Body, Left, Button, Title, Right } from 'native-base';
 
-class DashBoard extends Component {
-    
-    render() {
-        const {
-            rootStore: { routerStore }
-        } = this.props
+
+const TraderPage =(props)=>{
+    const {
+        rootStore: { routerStore }
+    } = props
+ 
+
 
         return (<Container>
             <Header>
@@ -18,7 +18,7 @@ class DashBoard extends Component {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>DashBoard</Title>
+                    <Title>TraderPage</Title>
                 </Body>
                 <Right>
                     <Button transparent>
@@ -27,10 +27,9 @@ class DashBoard extends Component {
                 </Right>
             </Header>
             <Content>
-                <Button onPress={() => {alert("This is Card Header");routerStore.goTo('setting');}}>
+                <Button onPress={() => {alert("This is Card Header");routerStore.goTo('dashboard');}}>
                     <Text>Click Me!</Text>
                 </Button>
-            </Content></Container>);
-    }
+            </Content></Container>)
 }
-export default inject('rootStore')(DashBoard);
+export default inject('rootStore')(TraderPage);
