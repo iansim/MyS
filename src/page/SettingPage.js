@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
 import {
@@ -14,42 +14,40 @@ import {
   Right
 } from 'native-base'
 
-class SettingPage extends Component {
-  render() {
-    const {
-      rootStore: { routerStore }
-    } = this.props
+const SettingPage = props => {
+  const {
+    rootStore: { routerStore }
+  } = props
 
-    return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name="arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Setting</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Icon name="menu" />
-            </Button>
-          </Right>
-        </Header>
-        <Content>
-          <Button
-            onPress={() => {
-              alert('This is Card Header')
-              routerStore.goTo('trader')
-            }}
-          >
-            <Text>Click Me!</Text>
+  return (
+    <Container>
+      <Header>
+        <Left>
+          <Button transparent>
+            <Icon name="arrow-back" />
           </Button>
-        </Content>
-      </Container>
-    )
-  }
+        </Left>
+        <Body>
+          <Title>Setting</Title>
+        </Body>
+        <Right>
+          <Button transparent>
+            <Icon name="menu" />
+          </Button>
+        </Right>
+      </Header>
+      <Content>
+        <Button
+          onPress={() => {
+            alert('This is Card Header')
+            routerStore.goTo('trader')
+          }}
+        >
+          <Text>Click Me!</Text>
+        </Button>
+      </Content>
+    </Container>
+  )
 }
 SettingPage.propTypes = {
   rootStore: PropTypes.object
