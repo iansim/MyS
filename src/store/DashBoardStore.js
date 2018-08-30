@@ -1,6 +1,6 @@
 import { observable } from 'mobx'
 const state = observable({
-    app: {}
+  app: {}
 })
 const actions = {}
 

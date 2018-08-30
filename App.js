@@ -6,35 +6,33 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import SplashScreen from 'react-native-splash-screen'
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import { configure } from 'mobx'
-import { Provider } from 'mobx-react'
-import { Shell } from './src/shell'
-import { RootStore } from './src/shared/utils/RootStore'
+import {configure} from 'mobx'
+import {Provider} from 'mobx-react'
+import {Shell} from './src/shell'
+import {RootStore} from './src/shared/utils/RootStore'
 
-configure({ isolatedGlobalState: true })
+configure({isolatedGlobalState: true})
 
 const rootStore = new RootStore()
 const stores = {
-  rootStore
+  rootStore,
 }
-configure({ isolatedGlobalState: true })
+configure({isolatedGlobalState: true})
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   componentDidMount() {
-
-  setTimeout(() => {
-        SplashScreen.hide();
-  }, 2000);
-
-}
+    setTimeout(() => {
+      SplashScreen.hide()
+    }, 2000)
+  }
 
   render() {
-    return (<Provider {...stores}>
-      <Shell {...this.props} />
-    </Provider>);
+    return (
+      <Provider {...stores}>
+        <Shell {...this.props} />
+      </Provider>
+    )
   }
 }

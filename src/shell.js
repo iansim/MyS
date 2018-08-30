@@ -5,8 +5,7 @@ import { RouterView } from 'mobx-state-router'
 import DashBoard from './page/DashBoard'
 import SettingPage from './page/SettingPage'
 import TraderPage from './page/TraderPage'
-import { Container } from 'native-base';
-
+import { Container } from 'native-base'
 
 const viewMap = {
   dashboard: <DashBoard />,
@@ -21,7 +20,7 @@ class ShellBase extends React.Component {
     } = this.props
     if (this.props.page) {
       routerStore.goTo(this.props.page, this.props.params)
-    }else{
+    } else {
       routerStore.goTo('dashboard', this.props.params)
     }
 
