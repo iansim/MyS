@@ -1,7 +1,11 @@
 export const routes = [
   {
-    name: 'dashboard',
+    name: 'main',
     pattern: '/'
+  },
+  {
+    name: 'dashboard',
+    pattern: '/dashboard'
   },
   {
     name: 'setting',
@@ -10,5 +14,9 @@ export const routes = [
   {
     name: 'trader',
     pattern: '/trader'
+  },
+  {
+    name: 'selectBrokers',
+    pattern: '/selectBrokers'
   }
 ]

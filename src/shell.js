@@ -2,13 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
 import { RouterView } from 'mobx-state-router'
+import MainPage from './page/MainPage'
+import SelectBrokersPage from './page/SelectBrokersPage'
 import DashBoard from './page/DashBoard'
 import SettingPage from './page/SettingPage'
 import TraderPage from './page/TraderPage'
 import { Container } from 'native-base'
 
 const viewMap = {
+  main: <MainPage />,
   dashboard: <DashBoard />,
+  selectBrokers: <SelectBrokersPage />,
   setting: <SettingPage />,
   trader: <TraderPage />
 }
@@ -21,7 +25,7 @@ class ShellBase extends React.Component {
     if (this.props.page) {
       routerStore.goTo(this.props.page, this.props.params)
     } else {
-      routerStore.goTo('dashboard', this.props.params)
+      routerStore.goTo('main', this.props.params)
     }
 
     return (

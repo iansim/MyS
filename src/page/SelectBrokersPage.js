@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Icon,
@@ -13,8 +14,11 @@ import {
   Title,
   Right
 } from 'native-base'
+import BrokersList from '../components/selectBrokers/BrokersList'
+import BrokersSelected from '../components/selectBrokers/BrokersSelected'
+import BrokersVendor from '../components/selectBrokers/BrockersVendor'
 
-const TraderPage = props => {
+const SelectBrokersPage = props => {
   const {
     rootStore: { routerStore }
   } = props
@@ -28,7 +32,7 @@ const TraderPage = props => {
           </Button>
         </Left>
         <Body>
-          <Title>Trade Execution</Title>
+          <Title>Select Brokers</Title>
         </Body>
         <Right>
           <Button transparent>
@@ -37,11 +41,13 @@ const TraderPage = props => {
         </Right>
       </Header>
       <Content>
-
+        <BrokersVendor />
+        <BrokersList />
+        <BrokersSelected />
         <Button
           onPress={() => {
             alert('This is Card Header')
-            routerStore.goTo('dashboard')
+            routerStore.goTo('trader')
           }}
         >
           <Text>Click Me!</Text>
@@ -50,7 +56,15 @@ const TraderPage = props => {
     </Container>
   )
 }
-TraderPage.propTypes = {
+
+const styles = StyleSheet.create({
+  
+
+
+})
+
+
+SelectBrokersPage.propTypes = {
   rootStore: PropTypes.object
 }
-export default inject('rootStore')(TraderPage)
+export default inject('rootStore')(SelectBrokersPage)

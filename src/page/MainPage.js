@@ -13,8 +13,9 @@ import {
   Title,
   Right
 } from 'native-base'
+import Login from '../components/main/Login'
 
-const TraderPage = props => {
+const MainPage = props => {
   const {
     rootStore: { routerStore }
   } = props
@@ -28,7 +29,7 @@ const TraderPage = props => {
           </Button>
         </Left>
         <Body>
-          <Title>Trade Execution</Title>
+          <Title>Main</Title>
         </Body>
         <Right>
           <Button transparent>
@@ -36,21 +37,27 @@ const TraderPage = props => {
           </Button>
         </Right>
       </Header>
-      <Content>
-
-        <Button
+      <Content style={{backgroundColor: '#237804'}}>
+      <Button
+        style={{position: 'absolute', top: 0, zIndex: 6}}
           onPress={() => {
             alert('This is Card Header')
-            routerStore.goTo('dashboard')
+            routerStore.goTo('selectBrokers')
           }}
         >
           <Text>Click Me!</Text>
         </Button>
+        <Login />
+        
       </Content>
     </Container>
   )
 }
-TraderPage.propTypes = {
+
+
+
+
+MainPage.propTypes = {
   rootStore: PropTypes.object
 }
-export default inject('rootStore')(TraderPage)
+export default inject('rootStore')(MainPage)

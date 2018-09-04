@@ -29,7 +29,10 @@
     "prop-types": "^15.6.2",
     "react": "16.4.1",
     "react-native": "0.56.0",
-    "react-native-splash-screen": "^3.1.1"
+    "react-native-splash-screen": "^3.1.1",
+    "react-native-svg": "^6.5.2",
+    "react-native-svg-charts": "^5.2.0",
+    "react-navigation": "^2.12.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
