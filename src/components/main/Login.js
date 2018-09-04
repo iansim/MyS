@@ -7,25 +7,26 @@ import { StyleSheet, Image, View, Text } from 'react-native'
 // } from 'native-base'
 import LoginForm from './LoginForm'
 
-const Login = (props) => {  
-  return(
+const Login = () => {
+  return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
-        style={styles.logo}
-        source={require('../../images/Octocat.png')} />
+          style={styles.logo}
+          source={require('../../images/Octocat.png')}
+        />
         <Text style={styles.title}>My Money System</Text>
-      </View>   
+      </View>
       <View>
         <LoginForm />
-      </View>     
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   logoContainer: {
     alignItems: 'center',
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 100,
-    height: 100,
+    height: 100
   },
   title: {
     marginTop: 15,

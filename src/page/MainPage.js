@@ -37,9 +37,9 @@ const MainPage = props => {
           </Button>
         </Right>
       </Header>
-      <Content style={{backgroundColor: '#237804'}}>
-      <Button
-        style={{position: 'absolute', top: 0, zIndex: 6}}
+      <Content style={{ backgroundColor: '#237804' }}>
+        <Button
+          style={{ position: 'absolute', top: 0, zIndex: 6 }}
           onPress={() => {
             alert('This is Card Header')
             routerStore.goTo('selectBrokers')
@@ -48,14 +48,10 @@ const MainPage = props => {
           <Text>Click Me!</Text>
         </Button>
         <Login />
-        
       </Content>
     </Container>
   )
 }
-
-
-
 
 MainPage.propTypes = {
   rootStore: PropTypes.object

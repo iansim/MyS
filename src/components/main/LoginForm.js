@@ -1,13 +1,9 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import { StyleSheet } from 'react-native'
-import {
-  View,
-  Text,
-  Form, Item, Input, Label, Button
-} from 'native-base'
+import { View, Text, Form, Item, Input, Label, Button } from 'native-base'
 
-const LoginForm = (props) => {
+const LoginForm = () => {
   return (
     <View style={styles.container}>
       <Form style={styles.form}>
@@ -31,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 10,
-    marginTop: 20,
+    marginTop: 20
   },
   form: {
     color: '#fff'
@@ -43,9 +39,8 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   btnSubmit: {
-    marginTop: 20,
+    marginTop: 20
   }
-  
 })
 
 export default observer(LoginForm)

@@ -1,6 +1,6 @@
 import { observable } from 'mobx'
 const state = observable({
-  tabDashBoard: { 
+  tabDashBoard: {
     portfolio: 'This is my stock portfolio Table and pie chart',
     trending: 'Will link to InvestNote',
     topTrader: 'Top Trader',

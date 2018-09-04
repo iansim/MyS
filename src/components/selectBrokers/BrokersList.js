@@ -3,13 +3,15 @@ import { observer } from 'mobx-react'
 import { StyleSheet } from 'react-native'
 import { View, Text, List, ListItem, Icon, Left, Right } from 'native-base'
 
-const BrokersList = (props) => {
-  console.log(props)
-  let { state } = props;
+const BrokersList = () => {
+  // console.log(props)
+  // let { state } = props;
 
   return (
     <View style={styles.content}>
-      <Text style={styles.brokerText}>Click on your brokers to add to the App.</Text>
+      <Text style={styles.brokerText}>
+        Click on your brokers to add to the App.
+      </Text>
       <List>
         <ListItem style={{ borderBottomColor: 'red' }}>
           <Left>
@@ -93,11 +95,11 @@ const BrokersList = (props) => {
 
 const styles = StyleSheet.create({
   content: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 10
   },
   brokerText: {
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 10
   }
 })
 

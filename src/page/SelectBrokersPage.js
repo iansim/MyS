@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-import { StyleSheet } from 'react-native'
 import {
   Container,
   Icon,
@@ -56,13 +55,6 @@ const SelectBrokersPage = props => {
     </Container>
   )
 }
-
-const styles = StyleSheet.create({
-  
-
-
-})
-
 
 SelectBrokersPage.propTypes = {
   rootStore: PropTypes.object

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-import {toJS} from 'mobx'
+// import {toJS} from 'mobx'
 import {
   Container,
   Icon,
@@ -22,11 +22,9 @@ const DashBoard = props => {
   const {
     rootStore: { routerStore }
   } = props
-  console.log(props)
 
-  let { state: {tabAppStockPortfolio} } = DashBoardStore
-  let DashBoardStoreProps = { DashBoardStore: toJS(DashBoardStore)}
-  console.log(DashBoardStoreProps)
+  // let { state: {tabAppStockPortfolio} } = DashBoardStore
+  // let DashBoardStoreProps = { DashBoardStore: toJS(DashBoardStore)}
 
   return (
     <Container>
@@ -46,7 +44,7 @@ const DashBoard = props => {
         </Right>
       </Header>
       <Content>
-      <StockPortfolio state={DashBoardStore.state} />
+        <StockPortfolio state={DashBoardStore.state} />
         <Button
           onPress={() => {
             alert('This is Card Header')

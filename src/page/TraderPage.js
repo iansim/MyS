@@ -37,7 +37,6 @@ const TraderPage = props => {
         </Right>
       </Header>
       <Content>
-
         <Button
           onPress={() => {
             alert('This is Card Header')
