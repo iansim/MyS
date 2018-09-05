@@ -1,46 +1,58 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import { StyleSheet } from 'react-native'
-import { View, Text, Form, Item, Input, Label, Button } from 'native-base'
+import { StyleSheet, View, TextInput, TouchableOpacity, Text, StatusBar } from 'react-native'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   return (
-    <View style={styles.container}>
-      <Form style={styles.form}>
-        <Item floatingLabel>
-          <Label style={styles.label}>User ID or email </Label>
-          <Input style={styles.input} />
-        </Item>
-        <Item floatingLabel last>
-          <Label style={styles.label}>Password</Label>
-          <Input style={styles.input} />
-        </Item>
-      </Form>
-      <Button style={styles.btnSubmit} block>
-        <Text>Sign In</Text>
-      </Button>
+    <View style={styles.containar}>
+    <StatusBar barStyle="light-content" />
+    <TextInput 
+      placeholder="Login ID or Email"
+      style={styles.input} 
+      placeholderTextColor="rgba(255,255,255,0.7)"
+      returnKeyType="next"
+      onSubmitEditing={() => this.passwordInput.focus()}
+      keyboardType="email-address"
+      autoCapitalize="none"
+      autoCorrect={false}
+      />
+    <TextInput 
+      placeholder="Password"
+      style={styles.input} 
+      secureTextEntry
+      placeholderTextColor="rgba(255,255,255,0.7)"
+      returnKeyType="go"
+      ref={(input) => this.passwordInput = input}
+      />
+    
+    <TouchableOpacity style={styles.buttonContainer}>
+      <Text style={styles.buttonText}>Login</Text>
+    </TouchableOpacity>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 10,
-    marginTop: 20
-  },
-  form: {
-    color: '#fff'
-  },
-  label: {
-    color: '#fff'
+  containar: {
+    padding: 20
   },
   input: {
-    color: '#fff'
+    height: 40,
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    marginBottom: 20,
+    color: '#fff',
+    paddingHorizontal: 10,
   },
-  btnSubmit: {
-    marginTop: 20
+  buttonContainer: {
+    backgroundColor: '#2980b9',
+    paddingVertical: 15,
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: '#fff',
+    fontWeight: '700',
   }
+  
 })
 
 export default observer(LoginForm)

@@ -1,47 +1,46 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import { StyleSheet, Image, View, Text } from 'react-native'
-// import {
-//   View,
-//   Text
-// } from 'native-base'
+import { StyleSheet, Image, View, Text, KeyboardAvoidingView } from 'react-native'
 import LoginForm from './LoginForm'
 
-const Login = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image
-          style={styles.logo}
-          source={require('../../images/Octocat.png')}
-        />
-        <Text style={styles.title}>My Money System</Text>
+const Login = (props) => {  
+  return(
+    <KeyboardAvoidingView behavior="padding" style={styles.containar}>
+      <View style={styles.logoContainar}>
+      <Image
+         style={styles.logo}
+         source={require('../../images/Octocat.png')} />
+         <Text style={styles.title}>My App</Text>
       </View>
-      <View>
+      <View style={styles.formContainar}>
         <LoginForm />
       </View>
-    </View>
+    </KeyboardAvoidingView>
+
+
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  logoContainer: {
-    alignItems: 'center',
-    flexGrow: 1,
-    justifyContent: 'center',
-    marginTop: '30%'
+  containar: {
+    flex: 1,
+    backgroundColor: '#096dd9',
   },
   logo: {
     width: 100,
-    height: 100
+    height: 100,
+  },
+  logoContainar: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
   },
   title: {
-    marginTop: 15,
+    color: '#fff',
+    marginTop: 10,
     textAlign: 'center',
-    color: '#fff'
+    opacity: 0.9,
+    width: 160,
   }
 })
 
