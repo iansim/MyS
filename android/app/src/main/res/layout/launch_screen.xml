@@ -18,7 +18,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:text="My S"
+        android:text="Hi Squirrel"
         android:textColor="@color/baseColor"
         android:textSize="30sp" />
 </RelativeLayout>
