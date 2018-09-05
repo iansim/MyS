@@ -21,15 +21,16 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="l" image="ic_launcher" translatesAutoresizingMaskIntoConstraints="NO" id="4Su-3m-aM5">
-                    <rect key="frame" x="108" y="131" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="l" image="ic_launcher" translatesAutoresizingMaskIntoConstraints="NO" id="4Su-3m-aM5">
+                    <rect key="frame" x="130" y="169" width="205" height="128"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="4Su-3m-aM5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OIk-p3-vo0"/>
+                <constraint firstItem="4Su-3m-aM5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qfm-Dh-wSh"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
