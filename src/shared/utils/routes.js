@@ -18,5 +18,9 @@ export const routes = [
   {
     name: 'selectBrokers',
     pattern: '/selectBrokers'
+  },
+  {
+    name: 'home',
+    pattern: '/home'
   }
 ]

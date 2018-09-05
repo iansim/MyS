@@ -54,5 +54,6 @@
         "jasmine": true
       },
   "rules": {
+    "react/display-name": 0
   }
 }

@@ -7,6 +7,7 @@ import SelectBrokersPage from './page/SelectBrokersPage'
 import DashBoard from './page/DashBoard'
 import SettingPage from './page/SettingPage'
 import TraderPage from './page/TraderPage'
+import HomeScreenRouter from './page/HomeScreenRouter'
 import { Container } from 'native-base'
 
 const viewMap = {
@@ -14,10 +15,12 @@ const viewMap = {
   dashboard: <DashBoard />,
   selectBrokers: <SelectBrokersPage />,
   setting: <SettingPage />,
-  trader: <TraderPage />
+  trader: <TraderPage />,
+  home: <HomeScreenRouter />
 }
 
 class ShellBase extends React.Component {
+  // render(){return <HomeScreenRouter/>}
   render() {
     const {
       rootStore: { routerStore }
@@ -25,7 +28,7 @@ class ShellBase extends React.Component {
     if (this.props.page) {
       routerStore.goTo(this.props.page, this.props.params)
     } else {
-      routerStore.goTo('main', this.props.params)
+      routerStore.goTo('home', this.props.params)
     }
 
     return (
