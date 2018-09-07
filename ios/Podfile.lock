@@ -58,6 +58,10 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - RNSVG (6.5.2):
+    - React
+  - RNVectorIcons (4.6.0):
+    - React
   - yoga (0.56.0.React)
 
 DEPENDENCIES:
@@ -80,6 +84,8 @@ DEPENDENCIES:
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTVibration (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - RNSVG (from `../node_modules/react-native-svg`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -97,6 +103,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -107,8 +117,10 @@ SPEC CHECKSUMS:
   glog: b3b0330915eccea41c5cc9731a77cf564a9be5ea
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
   react-native-splash-screen: 8e3f866dc79bfe533baeffd0a38c33f7a7eae7f8
+  RNSVG: 6252323c0312735f0af5f58b5adf2965b6a9ffbf
+  RNVectorIcons: c0dbfbf6068fefa240c37b0f71bd03b45dddac44
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: c098f90d1425989a0de562f52b94ec1e8f5ee1d2
+PODFILE CHECKSUM: 8c6e5e13fdabb794d8d786f08aa8dc29cc26b83c
 
 COCOAPODS: 1.5.3

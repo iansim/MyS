@@ -40,17 +40,6 @@ target 'MyS' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
-  target 'MySTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
-
-target 'MyS-tvOS' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for MyS-tvOS
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
 end
