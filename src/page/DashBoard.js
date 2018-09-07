@@ -1,52 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-// import {toJS} from 'mobx'
-import StockPortfolio from '../components/dashboard/StockPortfolio'
-import DashBoardStore from '../store/DashBoardStore'
+import { View } from 'react-native'
 
 // class DashBoard extends Component {
-const DashBoard = props => {
-  const {
-    rootStore: { routerStore }
-  } = props
-
+const DashBoard = () => {
   // let { state: {tabAppStockPortfolio} } = DashBoardStore
   // let DashBoardStoreProps = { DashBoardStore: toJS(DashBoardStore)}
 
-  return (
-    <Container>
-      <Header>
-        <Left>
-          <Button transparent>
-            <Icon name="arrow-back" />
-          </Button>
-        </Left>
-        <Body>
-          <Title>DashBoard</Title>
-        </Body>
-        <Right>
-          <Button transparent>
-            <Icon name="menu" />
-          </Button>
-        </Right>
-      </Header>
-      <Content>
-        <StockPortfolio state={DashBoardStore.state} />
-        <Button
-          onPress={() => {
-            alert('This is Card Header')
-            routerStore.goTo('main')
-            // routerStore.goTo('setting')
-          }}
-        >
-          <Text>Click Me!</Text>
-        </Button>
-      </Content>
-    </Container>
-  )
-}
-DashBoard.propTypes = {
-  rootStore: PropTypes.object
+  return <View />
 }
 export default inject('rootStore')(DashBoard)

@@ -40,7 +40,7 @@
 //               })
 //             }
 //             <Text>{state.tabAppStockPortfolio.content}</Text>
-//           </View> 
+//           </View>
 //           </Tab> */}
 //         <Tab heading="Portfolio">
 //           <Text style={styles.tabsContent}>{state.tabDashBoard.portfolio}</Text>

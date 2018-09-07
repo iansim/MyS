@@ -3,7 +3,7 @@ import SelectBrokersPage from './SelectBrokersPage.js'
 import SideBar from './layout/SideBar.js'
 import { createDrawerNavigator } from 'react-navigation'
 
-const HomeScreenRouter = createDrawerNavigator(
+const SelectBrokersPageRouter = createDrawerNavigator(
   {
     Home: { screen: SelectBrokersPage },
     Chat: { screen: SelectBrokersPage },
@@ -16,4 +16,4 @@ const HomeScreenRouter = createDrawerNavigator(
     initialRouteName: 'Home'
   }
 )
-export default HomeScreenRouter
+export default SelectBrokersPageRouter

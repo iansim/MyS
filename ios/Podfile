@@ -33,13 +33,14 @@ target 'MyS' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   
-  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
   # Pods for MyS
 
-  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
 end

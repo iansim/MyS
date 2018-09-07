@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
 import { RouterView } from 'mobx-state-router'
 import MainPage from './page/MainPage'
-import { View } from 'react-native'
-import { Header } from 'react-native-elements'
-import SelectBrokersPage from './page/SelectBrokersPage'
+import SelectBrokersPageRouter from './page/SelectBrokersPageRouter'
 import SelectBrokersCompanyPage from './page/SelectBrokersCompanyPage'
 
 // import DashBoard from './page/DashBoard'
@@ -14,11 +12,10 @@ import SelectBrokersCompanyPage from './page/SelectBrokersCompanyPage'
 // import HomeScreenRouter from './page/HomeScreenRouter'
 // import { Container } from 'native-base'
 
-
 const viewMap = {
   main: <MainPage />,
   // dashboard: <DashBoard />,
-  selectBrokers: <SelectBrokersPage />,
+  selectBrokers: <SelectBrokersPageRouter />,
   selectBrokersCompany: <SelectBrokersCompanyPage />
   // setting: <SettingPage />,
   // trader: <TraderPage />,
@@ -38,14 +35,13 @@ class ShellBase extends React.Component {
     }
 
     return (
-//       <View style={{backgroundColor: 'red'}}>
-//         <Header
-//   leftComponent={{ icon: 'menu', color: '#fff' }}
-//   centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-//   rightComponent={{ icon: 'home', color: '#fff' }}
-// />
-        <RouterView routerStore={routerStore} viewMap={viewMap} />
-
+      //       <View style={{backgroundColor: 'red'}}>
+      //         <Header
+      //   leftComponent={{ icon: 'menu', color: '#fff' }}
+      //   centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+      //   rightComponent={{ icon: 'home', color: '#fff' }}
+      // />
+      <RouterView routerStore={routerStore} viewMap={viewMap} />
     )
   }
 }
