@@ -2,18 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
 import { View, StyleSheet, Button,Text} from 'react-native'
-import BrokersList from '../components/selectBrokers/BrokersList'
-// import BrokersSelected from '../components/selectBrokers/BrokersSelected'
-// import BrokersVendor from '../components/selectBrokers/BrockersVendor'
+import BrokersSelectedCompany from '../components/selectBrokers/BrokersSelectedCompany'
 
-const SelectBrokersPage = props => {
+const SelectBrokersCompanyPage = props => {
   const {
     rootStore: { routerStore }
   } = props
 
   return (
     <View style={styles.container}>
-        <BrokersList />
+        <BrokersSelectedCompany />
         <Button
           title='Select Brockers'
           onPress={() => {
@@ -32,7 +30,7 @@ const styles = StyleSheet.create({
     }
   });
 
-SelectBrokersPage.propTypes = {
+  SelectBrokersCompanyPage.propTypes = {
   rootStore: PropTypes.object
 }
-export default inject('rootStore')(SelectBrokersPage)
+export default inject('rootStore')(SelectBrokersCompanyPage)

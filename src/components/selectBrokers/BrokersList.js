@@ -1,105 +1,82 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import { StyleSheet } from 'react-native'
-import { View, Text, List, ListItem, Icon, Left, Right } from 'native-base'
+import { StyleSheet ,View } from 'react-native'
+import { List, ListItem, Header, Text, Icon } from 'react-native-elements'
 
 const BrokersList = () => {
   // console.log(props)
   // let { state } = props;
-
+ 
+  const list = [
+    {
+      title: 'CIMB Securities',
+      icon: 'flight-takeoff'
+    },
+    {
+      title: 'Citibank',
+      icon: 'flight-takeoff'
+    },
+    {
+      title: 'DBS Vickers',
+      icon: 'flight-takeoff'
+    },
+    {
+      title: 'KGI Connex',
+      icon: 'flight-takeoff'
+    },
+    {
+      title: 'Lim & Tan Securities',
+      icon: 'flight-takeoff'
+    },
+      {
+        title: 'Maybank Kim Eng',
+        icon: 'flight-takeoff'
+      },
+      {
+        title: 'OCBC Securities',
+        icon: 'flight-takeoff'
+      },
+      {
+        title: 'Phillips Securities',
+        icon: 'flight-takeoff'
+      },
+      {
+        title: 'RHB Securities',
+        icon: 'flight-takeoff'
+      }
+  ]
+  
+  
   return (
-    <View style={styles.content}>
-      <Text style={styles.brokerText}>
+<View>
+<Header
+  leftComponent={{ icon: 'navigate-before', color: '#fff' }}
+  centerComponent={{ text: 'Select Brokers', style: { color: '#fff' } }}
+  rightComponent={{ icon: 'home', color: '#fff' }}
+/>
+<Text style={styles.brokerText}>
         Click on your brokers to add to the App.
       </Text>
-      <List>
-        <ListItem style={{ borderBottomColor: 'red' }}>
-          <Left>
-            <Text>CIMB Securities</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-        <ListItem>
-          <Left>
-            <Text>Citibank</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-
-        <ListItem>
-          <Left>
-            <Text>DBS Vickers</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-
-        <ListItem>
-          <Left>
-            <Text>KGI Connex</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-
-        <ListItem>
-          <Left>
-            <Text>Lim & Tan Securities</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-        <ListItem>
-          <Left>
-            <Text>Maybank Kim Eng</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-        <ListItem>
-          <Left>
-            <Text>OCBC Securities</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-        <ListItem>
-          <Left>
-            <Text>Phillips Securities</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-        <ListItem>
-          <Left>
-            <Text>RHB Securities</Text>
-          </Left>
-          <Right>
-            <Icon name="arrow-forward" />
-          </Right>
-        </ListItem>
-      </List>
-    </View>
+    <List>
+    {
+      list.map((item) => (
+        <ListItem
+          key={item.title}
+          title={item.title}
+          leftIcon={{name: item.icon}}
+        />
+      ))
+    }
+  </List>
+  </View>
+    
   )
 }
 
 const styles = StyleSheet.create({
-  content: {
-    paddingHorizontal: 10
-  },
   brokerText: {
-    marginTop: 10,
-    marginBottom: 10
+    paddingHorizontal: 10,
+    paddingTop: 17,
   }
 })
 

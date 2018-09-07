@@ -1,8 +1,12 @@
 import React from 'react'
+import { inject } from 'mobx-react'
 import { observer } from 'mobx-react'
-import { StyleSheet, View, TextInput, TouchableOpacity, Text, StatusBar } from 'react-native'
+import { StyleSheet, View, Button, TextInput, TouchableOpacity, StatusBar } from 'react-native'
 
 const LoginForm = (props) => {
+  const {
+    rootStore: { routerStore }
+  } = props
   return (
     <View style={styles.containar}>
     <StatusBar barStyle="light-content" />
@@ -26,7 +30,13 @@ const LoginForm = (props) => {
       />
     
     <TouchableOpacity style={styles.buttonContainer}>
-      <Text style={styles.buttonText}>Login</Text>
+      <Button 
+        small
+        title="Login" 
+        color="#ffffff"
+        onPress={() => {
+        routerStore.goTo('selectBrokers')
+      }} style={styles.buttonText}>Login</Button>
     </TouchableOpacity>
     </View>
   )
@@ -45,14 +55,19 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: '#2980b9',
-    paddingVertical: 15,
+    opacity: 0.9,
+    height: 40, 
+    marginTop: 0,
+    paddingTop: 0
   },
   buttonText: {
     textAlign: 'center',
     color: '#fff',
     fontWeight: '700',
+    
   }
   
 })
 
-export default observer(LoginForm)
+export default inject('rootStore')(observer(LoginForm))
+

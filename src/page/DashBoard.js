@@ -2,18 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
 // import {toJS} from 'mobx'
-import {
-  Container,
-  Icon,
-  Header,
-  Content,
-  Text,
-  Body,
-  Left,
-  Button,
-  Title,
-  Right
-} from 'native-base'
 import StockPortfolio from '../components/dashboard/StockPortfolio'
 import DashBoardStore from '../store/DashBoardStore'
 

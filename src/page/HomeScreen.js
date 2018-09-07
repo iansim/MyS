@@ -1,19 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  Button,
-  Text,
-  Container,
-  Card,
-  CardItem,
-  Body,
-  Content,
-  Header,
-  Title,
-  Left,
-  Icon,
-  Right
-} from 'native-base'
 import { DrawerActions } from 'react-navigation'
 //this.props.navigation.dispatch(DrawerActions.closeDrawer())
 class HomeScreen extends React.Component {
