@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Text, Container, List, ListItem, Content } from 'native-base'
 import { View, Image, StyleSheet } from 'react-native'
 import { List, ListItem } from 'react-native-elements'
-const routes = ['Home', 'Chat', 'Profile']
+// const routes = ['Portfolio', 'Trending', 'Top Trades', 'Trade']
 class SideBar extends React.Component {
   render() {
+    let routes = this.props.routes ||['Portfolio', 'Trending', 'Top Trades', 'Trade']
     return (
       <View style={styles.container}>
         <View style={styles.header}>

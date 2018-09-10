@@ -7,44 +7,45 @@ const BrokersList = () => {
   // console.log(props)
   // let { state } = props;
 
-  const list = [
+  const listBroker = [
     {
       title: 'CIMB Securities',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'Citibank',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'DBS Vickers',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'KGI Connex',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'Lim & Tan Securities',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'Maybank Kim Eng',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'OCBC Securities',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'Phillips Securities',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     },
     {
       title: 'RHB Securities',
-      icon: 'flight-takeoff'
+      icon: 'location-city'
     }
   ]
+  
 
   return (
     <View>
@@ -52,7 +53,7 @@ const BrokersList = () => {
         Click on your brokers to add to the App.
       </Text>
       <List>
-        {list.map(item => (
+        {listBroker.map(item => (
           <ListItem
             key={item.title}
             title={item.title}
@@ -67,7 +68,8 @@ const BrokersList = () => {
 const styles = StyleSheet.create({
   brokerText: {
     paddingHorizontal: 10,
-    paddingTop: 17
+    paddingTop: 17,
+    fontSize: 18
   }
 })
 

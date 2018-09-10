@@ -3,10 +3,10 @@ export const routes = [
     name: 'main',
     pattern: '/'
   },
-  // {
-  //   name: 'dashboard',
-  //   pattern: '/dashboard'
-  // },
+  {
+    name: 'dashboard',
+    pattern: '/dashboard'
+  },
   // {
   //   name: 'setting',
   //   pattern: '/setting'
@@ -23,6 +23,11 @@ export const routes = [
     name: 'selectBrokersCompany',
     pattern: '/selectBrokersCompany'
   },
+  {
+    name: 'tradeExecution',
+    pattern: '/tradeExecution'
+  },
+
   {
     name: 'home',
     pattern: '/home'

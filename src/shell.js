@@ -5,8 +5,9 @@ import { RouterView } from 'mobx-state-router'
 import MainPage from './page/MainPage'
 import SelectBrokersPageRouter from './page/SelectBrokersPageRouter'
 import SelectBrokersCompanyPage from './page/SelectBrokersCompanyPage'
+import TradeExecutionPage from './page/TradeExecutionPage'
+import DashboardPageRouter from './page/DashboardPageRouter'
 
-// import DashBoard from './page/DashBoard'
 // import SettingPage from './page/SettingPage'
 // import TraderPage from './page/TraderPage'
 // import HomeScreenRouter from './page/HomeScreenRouter'
@@ -14,9 +15,10 @@ import SelectBrokersCompanyPage from './page/SelectBrokersCompanyPage'
 
 const viewMap = {
   main: <MainPage />,
-  // dashboard: <DashBoard />,
+  dashboard: <DashboardPageRouter />,
   selectBrokers: <SelectBrokersPageRouter />,
-  selectBrokersCompany: <SelectBrokersCompanyPage />
+  selectBrokersCompany: <SelectBrokersCompanyPage />,
+  tradeExecution: <TradeExecutionPage />
   // setting: <SettingPage />,
   // trader: <TraderPage />,
   // home: <HomeScreenRouter />
@@ -31,12 +33,12 @@ class ShellBase extends React.Component {
     if (this.props.page) {
       routerStore.goTo(this.props.page, this.props.params)
     } else {
-      routerStore.goTo('main', this.props.params)
+      routerStore.goTo('tradeExecution', this.props.params)
     }
 
     return (
       //       <View style={{backgroundColor: 'red'}}>
-      //         <Header
+      //   <Header
       //   leftComponent={{ icon: 'menu', color: '#fff' }}
       //   centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
       //   rightComponent={{ icon: 'home', color: '#fff' }}

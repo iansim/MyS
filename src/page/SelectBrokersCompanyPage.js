@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-import { View, StyleSheet, Button, Text } from 'react-native'
+import { View, StyleSheet } from 'react-native'
+import { Button } from 'react-native-elements'
 import BrokersSelectedCompany from '../components/selectBrokers/BrokersSelectedCompany'
 
 const SelectBrokersCompanyPage = props => {
@@ -12,14 +13,15 @@ const SelectBrokersCompanyPage = props => {
   return (
     <View style={styles.container}>
       <BrokersSelectedCompany />
+      
       <Button
-        title="Select Brockers"
-        onPress={() => {
-          routerStore.goTo('selectBrokersCompany')
-        }}
-      >
-        <Text>Click Me!</Text>
-      </Button>
+          style={{marginTop: 15}}
+          title="Dashboard"
+          onPress={() => {
+            routerStore.goTo('dashboard')
+          }}
+        >
+        </Button>
     </View>
   )
 }
