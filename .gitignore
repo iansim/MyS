@@ -23,7 +23,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-
+yarn.lock
 # Android/IntelliJ
 #
 build/
