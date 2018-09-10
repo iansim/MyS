@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-import { View, StyleSheet, TouchableOpacity, Button, Text } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Header, Icon } from 'react-native-elements'
 import { DrawerActions } from 'react-navigation'
 import Trending from '../components/dashboard/Trending'

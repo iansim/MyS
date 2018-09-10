@@ -7,8 +7,7 @@ import { Divider, Card, Button } from 'react-native-elements'
 
 // import { Content, Tabs, Tab, ScrollableTab, Text } from 'native-base'
 
-const StockPortfolio = props => {
-  let { state } = props
+const StockPortfolio = () => {
 
   const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
 
