@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, ScrollView } from 'react-native'
 import { PieChart } from 'react-native-svg-charts'
 import { Divider, Card, Button } from 'react-native-elements'
 
@@ -28,6 +28,7 @@ const StockPortfolio = props => {
   }))
 
   return (
+    <ScrollView>
     <View style={styles.contentWrapper}>
       <View style={styles.pieChart}>
         <Text style={styles.title}>Pie Chart</Text>
@@ -67,7 +68,7 @@ const StockPortfolio = props => {
 
 
     </View>
-    
+    </ScrollView>
     // <Content>
     //   {/* <Text>
     // This is my portfolio
