@@ -1,23 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, StyleSheet, Button, Text} from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import TradeExecution from '../components/tradeExecution/TradeExecution'
 
-const TradeExecutionPage = props => {
-
+const TradeExecutionPage = () => {
   return (
     <View style={styles.container}>
-        <TradeExecution />
-        
+      <TradeExecution />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    }
-  });
+  container: {
+    flex: 1
+  }
+})
 
 TradeExecutionPage.propTypes = {
   rootStore: PropTypes.object

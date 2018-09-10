@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-import { View, StyleSheet, TouchableOpacity, Button, Text } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Header, Icon } from 'react-native-elements'
 import { DrawerActions } from 'react-navigation'
 import TopTrades from '../components/dashboard/TopTrades'
@@ -13,24 +13,26 @@ class TopTradesPage extends React.Component {
       <View style={styles.container}>
         <Header
           leftComponent={
-          <TouchableOpacity  
-            onPress={()=> {this.props.navigation.dispatch(DrawerActions.openDrawer()) }
-            }>
-            <Icon color='#ffffff' name="menu" />
-          </TouchableOpacity>            
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.dispatch(DrawerActions.openDrawer())
+              }}
+            >
+              <Icon color="#ffffff" name="menu" />
+            </TouchableOpacity>
           }
           centerComponent={{ text: 'Top Trades', style: { color: '#fff' } }}
           rightComponent={
-            <TouchableOpacity style={styles.menuWrapper} 
-            onPress={() => {
-              routerStore.goTo('main')
-            }
-            }>
-            <Icon color='#ffffff' name="home" />
-          </TouchableOpacity>   
+            <TouchableOpacity
+              style={styles.menuWrapper}
+              onPress={() => {
+                routerStore.goTo('main')
+              }}
+            >
+              <Icon color="#ffffff" name="home" />
+            </TouchableOpacity>
           }
         />
-        
 
         <TopTrades />
       </View>
@@ -49,4 +51,3 @@ TopTradesPage.propTypes = {
   navigation: PropTypes.object
 }
 export default inject('rootStore')(TopTradesPage)
-

@@ -8,7 +8,6 @@ import { Divider, Card, Button } from 'react-native-elements'
 // import { Content, Tabs, Tab, ScrollableTab, Text } from 'native-base'
 
 const StockPortfolio = () => {
-
   const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
 
   const randomColor = () =>
@@ -28,45 +27,40 @@ const StockPortfolio = () => {
 
   return (
     <ScrollView>
-    <View style={styles.contentWrapper}>
-      <View style={styles.pieChart}>
-        <Text style={styles.title}>Pie Chart</Text>
-        <PieChart style={{ height: 200 }} data={pieData} />
-      </View>
-      <Divider style={styles.divider} />
-      <View style={styles.recentTradesWrapper}>
-        <Text style={styles.titleRecentTrades}>Recent Trades</Text>
-        <Text>See recent trades</Text>
-      </View>
-      <Divider style={styles.divider} />
-
-      <View style={styles.latestNewsWrapper}>
-        <Text style={styles.titleLatestNews}>Latest News</Text>
-      </View>
-
-      <Card stye={{backgroundColor: 'red'}}>
-        <View>
-          <Text style={styles.newsDate}>07 Sep 2018</Text>
-          <Text style={styles.newsDate}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
-          <Button
-          style={{marginTop: 15}}
-          title="Read More"
-          buttonStyle={{ backgroundColor: 'rgba(0, 68, 94, 1)' }}
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}
-        />
-   
+      <View style={styles.contentWrapper}>
+        <View style={styles.pieChart}>
+          <Text style={styles.title}>Pie Chart</Text>
+          <PieChart style={{ height: 200 }} data={pieData} />
         </View>
-      </Card>
+        <Divider style={styles.divider} />
+        <View style={styles.recentTradesWrapper}>
+          <Text style={styles.titleRecentTrades}>Recent Trades</Text>
+          <Text>See recent trades</Text>
+        </View>
+        <Divider style={styles.divider} />
 
+        <View style={styles.latestNewsWrapper}>
+          <Text style={styles.titleLatestNews}>Latest News</Text>
+        </View>
 
-
-
-
-
-
-    </View>
+        <Card stye={{ backgroundColor: 'red' }}>
+          <View>
+            <Text style={styles.newsDate}>07 Sep 2018</Text>
+            <Text style={styles.newsDate}>
+              Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss
+              Drive In Brisbane, Australia For A$30.0 Million
+            </Text>
+            <Button
+              style={{ marginTop: 15 }}
+              title="Read More"
+              buttonStyle={{ backgroundColor: 'rgba(0, 68, 94, 1)' }}
+              onPress={() => {
+                //routerStore.goTo('dashboard')
+              }}
+            />
+          </View>
+        </Card>
+      </View>
     </ScrollView>
     // <Content>
     //   {/* <Text>
@@ -105,7 +99,7 @@ const StockPortfolio = () => {
 const styles = StyleSheet.create({
   contentWrapper: {
     paddingHorizontal: 0,
-    paddingVertical: 10,
+    paddingVertical: 10
   },
   title: {
     textAlign: 'center',
@@ -114,11 +108,11 @@ const styles = StyleSheet.create({
   },
   recentTradesWrapper: {
     marginTop: 20,
-    paddingHorizontal: 15,
+    paddingHorizontal: 15
   },
   divider: {
     backgroundColor: '#ccc',
-    marginTop: 30,
+    marginTop: 30
   },
   titleRecentTrades: {
     fontSize: 24,
@@ -126,12 +120,11 @@ const styles = StyleSheet.create({
   },
   latestNewsWrapper: {
     marginTop: 20,
-    paddingHorizontal: 15,
+    paddingHorizontal: 15
   },
   titleLatestNews: {
-    fontSize: 24,
+    fontSize: 24
   }
-
 })
 StockPortfolio.propTypes = {
   state: PropTypes.object

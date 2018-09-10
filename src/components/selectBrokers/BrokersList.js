@@ -45,7 +45,6 @@ const BrokersList = () => {
       icon: 'location-city'
     }
   ]
-  
 
   return (
     <View>

@@ -1,14 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { observer } from 'mobx-react'
 import { inject } from 'mobx-react'
-import { StyleSheet, View, Image, TouchableOpacity, Text } from 'react-native'
+import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import {
   Card,
   Button,
   Header,
   FormLabel,
   FormInput,
-  FormValidationMessage,
   Icon
 } from 'react-native-elements'
 
@@ -22,30 +22,30 @@ const BrokersSelectedCompany = props => {
     <View>
       <Header
         leftComponent={
-          <TouchableOpacity 
-          onPress={() => {
-            routerStore.goTo('selectBrokers')
-          }
-          }>
-          <Icon color='#ffffff' name="navigate-before" />
-        </TouchableOpacity>             
+          <TouchableOpacity
+            onPress={() => {
+              routerStore.goTo('selectBrokers')
+            }}
+          >
+            <Icon color="#ffffff" name="navigate-before" />
+          </TouchableOpacity>
         }
         centerComponent={{ text: 'Select Brokers', style: { color: '#fff' } }}
         rightComponent={
-          <TouchableOpacity 
-          onPress={() => {
-            routerStore.goTo('main')
-          }
-          }>
-          <Icon color='#ffffff' name="home" />
-        </TouchableOpacity>   
+          <TouchableOpacity
+            onPress={() => {
+              routerStore.goTo('main')
+            }}
+          >
+            <Icon color="#ffffff" name="home" />
+          </TouchableOpacity>
         }
       />
       <Card>
-      <Image
-        style={styles.logo}
-        source={require('../../images/cimb_securities.png')}
-      />
+        <Image
+          style={styles.logo}
+          source={require('../../images/cimb_securities.png')}
+        />
         <FormLabel>User ID</FormLabel>
         <FormInput />
         {/* <FormValidationMessage>Error message</FormValidationMessage> */}
@@ -55,14 +55,14 @@ const BrokersSelectedCompany = props => {
         {/* <FormValidationMessage>Error message</FormValidationMessage> */}
 
         <View style={styles.buttonSubmit}>
-        <Button
-          title="Submit"
-          color="#fff"
-          buttonStyle={{ backgroundColor: 'rgba(0, 68, 94, 1)' }}
-          onPress={() => {
-            routerStore.goTo('tradeExecution')
-          }}
-          />  
+          <Button
+            title="Submit"
+            color="#fff"
+            buttonStyle={{ backgroundColor: 'rgba(0, 68, 94, 1)' }}
+            onPress={() => {
+              routerStore.goTo('tradeExecution')
+            }}
+          />
         </View>
       </Card>
     </View>
@@ -71,8 +71,10 @@ const BrokersSelectedCompany = props => {
 
 const styles = StyleSheet.create({
   buttonSubmit: {
-    marginTop: 25,
+    marginTop: 25
   }
 })
-
+BrokersSelectedCompany.propTypes = {
+  rootStore: PropTypes.object
+}
 export default inject('rootStore')(observer(BrokersSelectedCompany))

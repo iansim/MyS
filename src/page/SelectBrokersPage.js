@@ -16,36 +16,35 @@ class SelectBrokersPage extends React.Component {
       <View style={styles.container}>
         <Header
           leftComponent={
-            <TouchableOpacity 
-            onPress={() => {
-              routerStore.goTo('main')
-            }
-            }>
-            <Icon color='#ffffff' name="navigate-before" />
-          </TouchableOpacity>             
+            <TouchableOpacity
+              onPress={() => {
+                routerStore.goTo('main')
+              }}
+            >
+              <Icon color="#ffffff" name="navigate-before" />
+            </TouchableOpacity>
           }
           centerComponent={{ text: 'Select Brokers', style: { color: '#fff' } }}
           rightComponent={
-            <TouchableOpacity 
-            onPress={() => {
-              routerStore.goTo('main')
-            }
-            }>
-            <Icon color='#ffffff' name="home" />
-          </TouchableOpacity>   
+            <TouchableOpacity
+              onPress={() => {
+                routerStore.goTo('main')
+              }}
+            >
+              <Icon color="#ffffff" name="home" />
+            </TouchableOpacity>
           }
         />
-        
+
         <BrokersList />
 
         <Button
-          style={{marginTop: 15}}
+          style={{ marginTop: 15 }}
           title="Select Brockers"
           onPress={() => {
             routerStore.goTo('selectBrokersCompany')
           }}
-        >
-        </Button>
+        />
       </View>
     )
   }
@@ -54,7 +53,7 @@ class SelectBrokersPage extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
+  }
 })
 
 SelectBrokersPage.propTypes = {

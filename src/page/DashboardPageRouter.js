@@ -14,7 +14,12 @@ const DashboardPageRouter = createDrawerNavigator(
     Trade: { screen: TradePage }
   },
   {
-    contentComponent: props => <SideBar {...props} routes={['Portfolio', 'Trending', 'Top Trades', 'Trade' ]} />
+    contentComponent: props => (
+      <SideBar
+        {...props}
+        routes={['Portfolio', 'Trending', 'Top Trades', 'Trade']}
+      />
+    )
   },
   {
     initialRouteName: 'Home'

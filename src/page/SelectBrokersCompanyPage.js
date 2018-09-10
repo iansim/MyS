@@ -13,15 +13,14 @@ const SelectBrokersCompanyPage = props => {
   return (
     <View style={styles.container}>
       <BrokersSelectedCompany />
-      
+
       <Button
-          style={{marginTop: 15}}
-          title="Dashboard"
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}
-        >
-        </Button>
+        style={{ marginTop: 15 }}
+        title="Dashboard"
+        onPress={() => {
+          routerStore.goTo('dashboard')
+        }}
+      />
     </View>
   )
 }

@@ -13,21 +13,24 @@ class DashBoard extends React.Component {
       <View style={styles.container}>
         <Header
           leftComponent={
-          <TouchableOpacity  
-            onPress={()=> {this.props.navigation.dispatch(DrawerActions.openDrawer()) }
-            }>
-            <Icon color='#ffffff' name="menu" />
-          </TouchableOpacity>            
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.dispatch(DrawerActions.openDrawer())
+              }}
+            >
+              <Icon color="#ffffff" name="menu" />
+            </TouchableOpacity>
           }
           centerComponent={{ text: 'Dashboard', style: { color: '#fff' } }}
           rightComponent={
-            <TouchableOpacity style={styles.menuWrapper} 
-            onPress={() => {
-              routerStore.goTo('main')
-            }
-            }>
-            <Icon color='#ffffff' name="home" />
-          </TouchableOpacity>   
+            <TouchableOpacity
+              style={styles.menuWrapper}
+              onPress={() => {
+                routerStore.goTo('main')
+              }}
+            >
+              <Icon color="#ffffff" name="home" />
+            </TouchableOpacity>
           }
         />
         <StockPortfolio />
@@ -40,7 +43,6 @@ class DashBoard extends React.Component {
         >
           <Text>Click Me!</Text>
         </Button>
-        
       </View>
     )
   }

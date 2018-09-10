@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "lint": "eslint . && npm run prettier",
-    "precommit": "lint-staged",
+    "precommit": "npm run lint",
     "prettier": "prettier --write \"src/**/*.js\""
   },
   "prettier": {

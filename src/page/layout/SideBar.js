@@ -5,7 +5,12 @@ import { List, ListItem } from 'react-native-elements'
 // const routes = ['Portfolio', 'Trending', 'Top Trades', 'Trade']
 class SideBar extends React.Component {
   render() {
-    let routes = this.props.routes ||['Portfolio', 'Trending', 'Top Trades', 'Trade']
+    let routes = this.props.routes || [
+      'Portfolio',
+      'Trending',
+      'Top Trades',
+      'Trade'
+    ]
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -74,6 +79,7 @@ const styles = StyleSheet.create({
 })
 
 SideBar.propTypes = {
-  navigation: PropTypes.object
+  navigation: PropTypes.object,
+  routes: PropTypes.object
 }
 export default SideBar

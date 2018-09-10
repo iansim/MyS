@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-import { View, StyleSheet, TouchableOpacity, Button, Text } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Header, Icon } from 'react-native-elements'
 import { DrawerActions } from 'react-navigation'
 import Trade from '../components/dashboard/Trade'
@@ -13,27 +13,28 @@ class TradePage extends React.Component {
       <View style={styles.container}>
         <Header
           leftComponent={
-          <TouchableOpacity  
-            onPress={()=> {this.props.navigation.dispatch(DrawerActions.openDrawer()) }
-            }>
-            <Icon color='#ffffff' name="menu" />
-          </TouchableOpacity>            
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.dispatch(DrawerActions.openDrawer())
+              }}
+            >
+              <Icon color="#ffffff" name="menu" />
+            </TouchableOpacity>
           }
           centerComponent={{ text: 'Trade', style: { color: '#fff' } }}
           rightComponent={
-            <TouchableOpacity style={styles.menuWrapper} 
-            onPress={() => {
-              routerStore.goTo('main')
-            }
-            }>
-            <Icon color='#ffffff' name="home" />
-          </TouchableOpacity>   
+            <TouchableOpacity
+              style={styles.menuWrapper}
+              onPress={() => {
+                routerStore.goTo('main')
+              }}
+            >
+              <Icon color="#ffffff" name="home" />
+            </TouchableOpacity>
           }
         />
-        
 
         <Trade />
-        
       </View>
     )
   }
@@ -50,4 +51,3 @@ TradePage.propTypes = {
   navigation: PropTypes.object
 }
 export default inject('rootStore')(TradePage)
-
