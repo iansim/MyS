@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { inject } from 'mobx-react'
-import { View, StyleSheet, TouchableOpacity, Button, Text } from 'react-native'
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Header, Icon } from 'react-native-elements'
 import StockPortfolio from '../components/dashboard/StockPortfolio'
 import { DrawerActions } from 'react-navigation'
@@ -35,14 +35,7 @@ class DashBoard extends React.Component {
         />
         <StockPortfolio />
 
-        <Button
-          title="Select Brockers"
-          onPress={() => {
-            routerStore.goTo('tradeExecution')
-          }}
-        >
-          <Text>Click Me!</Text>
-        </Button>
+  
       </View>
     )
   }

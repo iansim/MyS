@@ -27,7 +27,10 @@ export const routes = [
     name: 'tradeExecution',
     pattern: '/tradeExecution'
   },
-
+  {
+    name: 'tradeExecutionOption',
+    pattern: '/tradeExecutionOption'
+  },
   {
     name: 'home',
     pattern: '/home'

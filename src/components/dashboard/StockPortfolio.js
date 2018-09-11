@@ -1,14 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { observer } from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import { StyleSheet, View, Text, ScrollView } from 'react-native'
 import { PieChart } from 'react-native-svg-charts'
 import { Divider, Card, Button } from 'react-native-elements'
 
 // import { Content, Tabs, Tab, ScrollableTab, Text } from 'native-base'
 
-const StockPortfolio = () => {
-  const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
+const StockPortfolio = (props) => {
+  const {
+    rootStore: { routerStore }
+  } = props
+  
+  const data = [ 35, 53, 24, 50 ]
 
   const randomColor = () =>
     ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(
@@ -30,7 +34,7 @@ const StockPortfolio = () => {
       <View style={styles.contentWrapper}>
         <View style={styles.pieChart}>
           <Text style={styles.title}>Pie Chart</Text>
-          <PieChart style={{ height: 200 }} data={pieData} />
+          <PieChart style={{ height: 300 }} data={pieData} />
         </View>
         <Divider style={styles.divider} />
         <View style={styles.recentTradesWrapper}>
@@ -43,24 +47,59 @@ const StockPortfolio = () => {
           <Text style={styles.titleLatestNews}>Latest News</Text>
         </View>
 
-        <Card stye={{ backgroundColor: 'red' }}>
-          <View>
-            <Text style={styles.newsDate}>07 Sep 2018</Text>
-            <Text style={styles.newsDate}>
-              Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss
-              Drive In Brisbane, Australia For A$30.0 Million
-            </Text>
-            <Button
-              style={{ marginTop: 15 }}
-              title="Read More"
-              buttonStyle={{ backgroundColor: 'rgba(0, 68, 94, 1)' }}
-              onPress={() => {
-                //routerStore.goTo('dashboard')
-              }}
-            />
-          </View>
-        </Card>
+        <Card>
+        <View
+          onPress={() => {
+            routerStore.goTo('dashboard')
+          }}>
+          <Text style={styles.newsDate}>07 Sep 2018</Text>
+          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
+        </View>
+      </Card>
+      <Card>
+        <View
+          onPress={() => {
+            routerStore.goTo('dashboard')
+          }}>
+          <Text style={styles.newsDate}>07 Sep 2018</Text>
+          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
+        </View>
+      </Card>
+      <Card>
+        <View
+          onPress={() => {
+            routerStore.goTo('dashboard')
+          }}>
+          <Text style={styles.newsDate}>07 Sep 2018</Text>
+          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
+        </View>
+      </Card>
+      <Card>
+        <View
+          onPress={() => {
+            routerStore.goTo('dashboard')
+          }}>
+          <Text style={styles.newsDate}>07 Sep 2018</Text>
+          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
+        </View>
+      </Card>
+      <Card>
+        <View
+          onPress={() => {
+            routerStore.goTo('dashboard')
+          }}>
+          <Text style={styles.newsDate}>07 Sep 2018</Text>
+          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
+        </View>
+      </Card>
       </View>
+      <Button
+          style={{ marginTop: 15 }}
+          title="Trade Execution"
+          onPress={() => {
+            routerStore.goTo('tradeExecution')
+          }}
+        />
     </ScrollView>
     // <Content>
     //   {/* <Text>
@@ -124,9 +163,14 @@ const styles = StyleSheet.create({
   },
   titleLatestNews: {
     fontSize: 24
+  },
+  newsDate: {
+    
   }
 })
 StockPortfolio.propTypes = {
   state: PropTypes.object
 }
-export default observer(StockPortfolio)
+
+
+export default inject('rootStore')(observer(StockPortfolio))
