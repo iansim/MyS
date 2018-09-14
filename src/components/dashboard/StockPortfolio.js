@@ -169,8 +169,10 @@ const styles = StyleSheet.create({
   }
 })
 StockPortfolio.propTypes = {
-  state: PropTypes.object
+  state: PropTypes.object,
+  rootStore: PropTypes.object
 }
 
 
 export default inject('rootStore')(observer(StockPortfolio))
+

@@ -1,6 +1,6 @@
 import React from 'react'
-import { observer } from 'mobx-react'
-import { inject } from 'mobx-react'
+import PropTypes from 'prop-types'
+import { observer, inject } from 'mobx-react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
 import { Header, Icon, Divider, Button } from 'react-native-elements'
 import { Dropdown } from 'react-native-material-dropdown'
@@ -69,6 +69,7 @@ const TradeExecutionOption = props => {
     value: '1000',
   }]
 
+  
 
   const {
     rootStore: { routerStore }
@@ -224,5 +225,9 @@ const styles = StyleSheet.create({
 
   }
 })
+
+TradeExecutionOption.propTypes = {
+  rootStore: PropTypes.object 
+}
 
 export default inject('rootStore')(observer(TradeExecutionOption))
