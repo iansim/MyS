@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   buttonContainer: {
-    backgroundColor: '#2980b9',
+    backgroundColor: '#000',
     opacity: 0.9,
     height: 40,
     marginTop: 0,

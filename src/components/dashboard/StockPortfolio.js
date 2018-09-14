@@ -7,12 +7,12 @@ import { Divider, Card, Button } from 'react-native-elements'
 
 // import { Content, Tabs, Tab, ScrollableTab, Text } from 'native-base'
 
-const StockPortfolio = (props) => {
+const StockPortfolio = props => {
   const {
     rootStore: { routerStore }
   } = props
-  
-  const data = [ 35, 53, 24, 50 ]
+
+  const data = [35, 53, 24, 50]
 
   const randomColor = () =>
     ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(
@@ -48,58 +48,80 @@ const StockPortfolio = (props) => {
         </View>
 
         <Card>
-        <View
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}>
-          <Text style={styles.newsDate}>07 Sep 2018</Text>
-          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
-        </View>
-      </Card>
-      <Card>
-        <View
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}>
-          <Text style={styles.newsDate}>07 Sep 2018</Text>
-          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
-        </View>
-      </Card>
-      <Card>
-        <View
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}>
-          <Text style={styles.newsDate}>07 Sep 2018</Text>
-          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
-        </View>
-      </Card>
-      <Card>
-        <View
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}>
-          <Text style={styles.newsDate}>07 Sep 2018</Text>
-          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
-        </View>
-      </Card>
-      <Card>
-        <View
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}>
-          <Text style={styles.newsDate}>07 Sep 2018</Text>
-          <Text style={styles.newDetails}>Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss Drive In Brisbane, Australia For A$30.0 Million</Text>
-        </View>
-      </Card>
+          <View
+            onPress={() => {
+              routerStore.goTo('dashboard')
+            }}
+          >
+            <Text style={styles.newsDate}>07 Sep 2018</Text>
+            <Text style={styles.newDetails}>
+              Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss
+              Drive In Brisbane, Australia For A$30.0 Million
+            </Text>
+          </View>
+        </Card>
+        <Card>
+          <View
+            onPress={() => {
+              routerStore.goTo('dashboard')
+            }}
+          >
+            <Text style={styles.newsDate}>07 Sep 2018</Text>
+            <Text style={styles.newDetails}>
+              Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss
+              Drive In Brisbane, Australia For A$30.0 Million
+            </Text>
+          </View>
+        </Card>
+        <Card>
+          <View
+            onPress={() => {
+              routerStore.goTo('dashboard')
+            }}
+          >
+            <Text style={styles.newsDate}>07 Sep 2018</Text>
+            <Text style={styles.newDetails}>
+              Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss
+              Drive In Brisbane, Australia For A$30.0 Million
+            </Text>
+          </View>
+        </Card>
+        <Card>
+          <View
+            onPress={() => {
+              routerStore.goTo('dashboard')
+            }}
+          >
+            <Text style={styles.newsDate}>07 Sep 2018</Text>
+            <Text style={styles.newDetails}>
+              Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss
+              Drive In Brisbane, Australia For A$30.0 Million
+            </Text>
+          </View>
+        </Card>
+        <Card>
+          <View
+            onPress={() => {
+              routerStore.goTo('dashboard')
+            }}
+          >
+            <Text style={styles.newsDate}>07 Sep 2018</Text>
+            <Text style={styles.newDetails}>
+              Ascendas REIT Completes The Acquisition Of No. 1-7 Wayne Goss
+              Drive In Brisbane, Australia For A$30.0 Million
+            </Text>
+          </View>
+        </Card>
       </View>
       <Button
-          style={{ marginTop: 15 }}
-          title="Trade Execution"
-          onPress={() => {
-            routerStore.goTo('tradeExecution')
-          }}
-        />
+        style={{ marginTop: 15 }}
+        title="Trade Execution"
+        onPress={() => {
+          routerStore.goTo('tradeExecution')
+        }}
+      />
+
+    
     </ScrollView>
     // <Content>
     //   {/* <Text>
@@ -164,15 +186,11 @@ const styles = StyleSheet.create({
   titleLatestNews: {
     fontSize: 24
   },
-  newsDate: {
-    
-  }
+  newsDate: {}
 })
 StockPortfolio.propTypes = {
   state: PropTypes.object,
   rootStore: PropTypes.object
 }
 
-
 export default inject('rootStore')(observer(StockPortfolio))
-

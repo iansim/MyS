@@ -9,7 +9,6 @@ import TradeExecutionPage from './page/TradeExecutionPage'
 import TradeExecutionOptionPage from './page/TradeExecutionOptionPage'
 import DashboardPageRouter from './page/DashboardPageRouter'
 
-
 // import TraderPage from './page/TraderPage'
 // import HomeScreenRouter from './page/HomeScreenRouter'
 // import { Container } from 'native-base'
@@ -34,7 +33,7 @@ class ShellBase extends React.Component {
     if (this.props.page) {
       routerStore.goTo(this.props.page, this.props.params)
     } else {
-      routerStore.goTo('dashboard', this.props.params)
+      routerStore.goTo('main', this.props.params)
     }
 
     return (

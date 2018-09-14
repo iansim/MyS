@@ -34,8 +34,6 @@ class DashBoard extends React.Component {
           }
         />
         <StockPortfolio />
-
-  
       </View>
     )
   }
