@@ -19,12 +19,9 @@ const StockPortfolio = props => {
       7
     )
   const color = []
-  for(let i = 0; i < data.length; i++){
+  for (let i = 0; i < data.length; i++) {
     color.push(randomColor())
   }
-  
-
-
 
   const pieData = data.filter(value => value > 0).map((value, index) => ({
     value,
@@ -59,7 +56,7 @@ const StockPortfolio = props => {
           </View>
 
           <View style={styles.legendBar}>
-            <View style={[styles.leftContainer, { backgroundColor: color[1]  }]}>
+            <View style={[styles.leftContainer, { backgroundColor: color[1] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
             <Text style={styles.text}>Service</Text>
@@ -71,7 +68,7 @@ const StockPortfolio = props => {
           </View>
 
           <View style={styles.legendBar}>
-            <View style={[styles.leftContainer, { backgroundColor: color[2]  }]}>
+            <View style={[styles.leftContainer, { backgroundColor: color[2] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
             <Text style={styles.text}>Finance</Text>
