@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import LoginForm from './LoginForm'
 
-const Login = () => {
+const Login = props => {
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.containar}>
       <View style={styles.logoContainar}>
@@ -20,7 +20,7 @@ const Login = () => {
         <Text style={styles.title}>My App</Text>
       </View>
       <View style={styles.formContainar}>
-        <LoginForm />
+        <LoginForm {...props} />
       </View>
     </KeyboardAvoidingView>
   )

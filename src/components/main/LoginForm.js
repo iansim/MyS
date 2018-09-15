@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { inject } from 'mobx-react'
 import { observer } from 'mobx-react'
 import {
   StyleSheet,
@@ -12,9 +11,8 @@ import {
 } from 'react-native'
 
 const LoginForm = props => {
-  const {
-    rootStore: { routerStore }
-  } = props
+  const { updateField, submitForm } = props
+  // let passwordInput = null
   return (
     <View style={styles.containar}>
       <StatusBar barStyle="light-content" />
@@ -27,6 +25,9 @@ const LoginForm = props => {
         keyboardType="email-address"
         autoCapitalize="none"
         autoCorrect={false}
+        onChangeText={text => {
+          updateField('username', text)
+        }}
       />
       <TextInput
         placeholder="Password"
@@ -34,7 +35,10 @@ const LoginForm = props => {
         secureTextEntry
         placeholderTextColor="rgba(255,255,255,0.7)"
         returnKeyType="go"
-        ref={input => (this.passwordInput = input)}
+        // ref={input => (passwordInput = input)}
+        onChangeText={text => {
+          updateField('password', text)
+        }}
       />
 
       <TouchableOpacity style={styles.buttonContainer}>
@@ -42,9 +46,7 @@ const LoginForm = props => {
           small
           title="Login"
           color="#ffffff"
-          onPress={() => {
-            routerStore.goTo('selectBrokers')
-          }}
+          onPress={submitForm}
           style={styles.buttonText}
         >
           Login
@@ -80,6 +82,7 @@ const styles = StyleSheet.create({
 })
 LoginForm.propTypes = {
   navigation: PropTypes.object,
-  rootStore: PropTypes.object
+  updateField: PropTypes.func,
+  submitForm: PropTypes.func
 }
-export default inject('rootStore')(observer(LoginForm))
+export default observer(LoginForm)
