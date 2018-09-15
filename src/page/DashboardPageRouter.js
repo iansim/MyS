@@ -33,17 +33,19 @@ import { createDrawerNavigator } from 'react-navigation'
 //     initialRouteName: 'Trade'
 //   }
 // )
-let DashboardPageRouterProxy = (props) =>{
+let DashboardPageRouterProxy = props => {
   const {
     rootStore: { routerStore }
   } = props
-  const { routerState: { params } } = routerStore;
-  let MyPage =  createDrawerNavigator(
+  const {
+    routerState: { params }
+  } = routerStore
+  let MyPage = createDrawerNavigator(
     {
       Portfolio: { screen: DashBoard },
       Trending: { screen: TrendingPage },
       'Top Trades': { screen: TopTradesPage },
-      Trade: { screen: TradePage },
+      Trade: { screen: TradePage }
       // 'View Profile': { screen: ViewProfilePage }
     },
     {
@@ -54,18 +56,18 @@ let DashboardPageRouterProxy = (props) =>{
             'Portfolio',
             'Trending',
             'Top Trades',
-            'Trade',
+            'Trade'
             // 'View Profile'
           ]}
         />
       ),
-      initialRouteName: params.section||'Portfolio'
+      initialRouteName: params.section || 'Portfolio'
     }
   )
-  return <MyPage/>
+  return <MyPage />
 }
 
 DashboardPageRouterProxy.propTypes = {
-  rootStore: PropTypes.object,
+  rootStore: PropTypes.object
 }
 export default inject('rootStore')(DashboardPageRouterProxy)

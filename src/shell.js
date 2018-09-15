@@ -38,9 +38,7 @@ class ShellBase extends React.Component {
       routerStore.goTo('main', this.props.params)
     }
 
-    return (
-      <RouterView routerStore={routerStore} viewMap={viewMap} />
-    )
+    return <RouterView routerStore={routerStore} viewMap={viewMap} />
   }
 }
 ShellBase.propTypes = {

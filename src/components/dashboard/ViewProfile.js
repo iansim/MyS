@@ -1,26 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { observer, inject } from 'mobx-react'
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity
+} from 'react-native'
 import { Button, Avatar, Divider, Header, Icon } from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/Ionicons'
 
-const ViewProfile = (props) => {
+const ViewProfile = props => {
   const {
     rootStore: { routerStore }
   } = props
 
   return (
     <View
-    style={{
-      flex: 1
-    }}
-  >
-  <Header
+      style={{
+        flex: 1
+      }}
+    >
+      <Header
         leftComponent={
           <TouchableOpacity
             onPress={() => {
-              routerStore.goTo('dashboard', {section: 'Top Trades'})
+              routerStore.goTo('dashboard', { section: 'Top Trades' })
             }}
           >
             <Icon color="#ffffff" name="navigate-before" />
@@ -37,123 +43,129 @@ const ViewProfile = (props) => {
           </TouchableOpacity>
         }
       />
-    <ScrollView style={{ backgroundColor: '#F1F0F1' }}>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'column',
-          backgroundColor: 'white',
-          borderRadius: 5,
-          alignItems: 'center',
-          marginHorizontal: 10,
-          height: 180,
-          marginBottom: 10
-        }}
-      >
-        <View style={{ flex: 3, flexDirection: 'row' }}>
-          <View
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-          >
-            <Avatar
-              width={145}
-              height={145}
-              source={{
-                uri:
-                  'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+      <ScrollView style={{ backgroundColor: '#F1F0F1' }}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'column',
+            backgroundColor: 'white',
+            borderRadius: 5,
+            alignItems: 'center',
+            marginHorizontal: 10,
+            height: 180,
+            marginBottom: 10
+          }}
+        >
+          <View style={{ flex: 3, flexDirection: 'row' }}>
+            <View
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
               }}
-              activeOpacity={0.7}
-              avatarStyle={{ borderRadius: 145 / 2 }}
-              overlayContainerStyle={{ backgroundColor: 'transparent' }}
-            />
-          </View>
-          <View
-            style={{
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginBottom: 10
-            }}
-          >
-            <View style={{ flex: 1, marginTop: 10, justifyContent: 'center' }}>
-              <Text
-                style={{
-                  fontSize: 25,
-                  color: 'rgba(98,93,144,1)',
-                  marginLeft: -15
+            >
+              <Avatar
+                width={145}
+                height={145}
+                source={{
+                  uri:
+                    'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
                 }}
+                activeOpacity={0.7}
+                avatarStyle={{ borderRadius: 145 / 2 }}
+                overlayContainerStyle={{ backgroundColor: 'transparent' }}
+              />
+            </View>
+            <View
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginBottom: 10
+              }}
+            >
+              <View
+                style={{ flex: 1, marginTop: 10, justifyContent: 'center' }}
               >
-                Amy Han
-              </Text>
+                <Text
+                  style={{
+                    fontSize: 25,
+                    color: 'rgba(98,93,144,1)',
+                    marginLeft: -15
+                  }}
+                >
+                  Amy Han
+                </Text>
+              </View>
             </View>
           </View>
         </View>
-      </View>
 
-      <View style={styles.tradesDetails}>
-        <View style={styles.leftContainer}>
-          <Text style={[styles.text, { textAlign: 'left' }]}>Return(%)</Text>
+        <View style={styles.tradesDetails}>
+          <View style={styles.leftContainer}>
+            <Text style={[styles.text, { textAlign: 'left' }]}>Return(%)</Text>
+          </View>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon} />
+            <Text>12.00</Text>
+          </View>
         </View>
-        <View style={styles.rightContainer}>
-          <View style={styles.rightIcon} />
-          <Text>12.00</Text>
+        <Divider style={{ backgroundColor: '#ccc' }} />
+        <View style={styles.tradesDetails}>
+          <View style={styles.leftContainer}>
+            <Text style={[styles.text, { textAlign: 'left' }]}>
+              Recent Trades
+            </Text>
+          </View>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon} />
+            <Text>12.00</Text>
+          </View>
         </View>
-      </View>
-      <Divider style={{ backgroundColor: '#ccc' }} />
-      <View style={styles.tradesDetails}>
-        <View style={styles.leftContainer}>
-          <Text style={[styles.text, { textAlign: 'left' }]}>
-            Recent Trades
-          </Text>
+        <Divider style={{ backgroundColor: '#ccc' }} />
+        <View style={styles.tradesDetails}>
+          <View style={styles.leftContainer}>
+            <Text style={[styles.text, { textAlign: 'left' }]}>
+              Investment Style
+            </Text>
+          </View>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon} />
+            <Text>12.00</Text>
+          </View>
         </View>
-        <View style={styles.rightContainer}>
-          <View style={styles.rightIcon} />
-          <Text>12.00</Text>
+        <Divider style={{ backgroundColor: '#ccc' }} />
+        <View style={styles.tradesDetails}>
+          <View style={styles.leftContainer}>
+            <Text style={[styles.text, { textAlign: 'left' }]}>Risk</Text>
+          </View>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon} />
+            <Text>12.00</Text>
+          </View>
         </View>
-      </View>
-      <Divider style={{ backgroundColor: '#ccc' }} />
-      <View style={styles.tradesDetails}>
-        <View style={styles.leftContainer}>
-          <Text style={[styles.text, { textAlign: 'left' }]}>
-            Investment Style
-          </Text>
-        </View>
-        <View style={styles.rightContainer}>
-          <View style={styles.rightIcon} />
-          <Text>12.00</Text>
-        </View>
-      </View>
-      <Divider style={{ backgroundColor: '#ccc' }} />
-      <View style={styles.tradesDetails}>
-        <View style={styles.leftContainer}>
-          <Text style={[styles.text, { textAlign: 'left' }]}>Risk</Text>
-        </View>
-        <View style={styles.rightContainer}>
-          <View style={styles.rightIcon} />
-          <Text>12.00</Text>
-        </View>
-      </View>
-      <Divider style={{ backgroundColor: '#ccc' }} />
+        <Divider style={{ backgroundColor: '#ccc' }} />
 
-      <View
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: 20
-        }}
-      >
-        <Button
-          title="Follow Me"
-          buttonStyle={{
-            width: 120,
-            backgroundColor: 'rgba(113, 154, 112, 1)',
-            borderRadius: 5
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 20
           }}
-          titleStyle={{ fontSize: 13, color: 'white' }}
-          // onPress={() => console.log('aye')}
-          underlayColor="transparent"
-        />
-      </View>
-    </ScrollView>
+        >
+          <Button
+            title="Follow Me"
+            buttonStyle={{
+              width: 120,
+              backgroundColor: 'rgba(113, 154, 112, 1)',
+              borderRadius: 5
+            }}
+            titleStyle={{ fontSize: 13, color: 'white' }}
+            // onPress={() => console.log('aye')}
+            underlayColor="transparent"
+          />
+        </View>
+      </ScrollView>
     </View>
   )
 }

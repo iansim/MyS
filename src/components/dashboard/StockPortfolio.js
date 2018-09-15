@@ -37,56 +37,57 @@ const StockPortfolio = props => {
           <PieChart style={{ height: 300 }} data={pieData} />
         </View>
 
-<View style={styles.legendWrapper}>
-        <View style={styles.legendBar}>
-        <View style={[styles.leftContainer, { backgroundColor: 'green' }]}>
-            <Text style={[styles.text, { textAlign: 'left' }]} />
+        <View style={styles.legendWrapper}>
+          <View style={styles.legendBar}>
+            <View style={[styles.leftContainer, { backgroundColor: 'green' }]}>
+              <Text style={[styles.text, { textAlign: 'left' }]} />
+            </View>
+            <Text style={styles.text}>
+              Transportation/Storage/Communication
+            </Text>
+            <View style={styles.rightContainer}>
+              <View style={styles.rightIcon}>
+                <Text>0.35%</Text>
+              </View>
+            </View>
           </View>
-          <Text style={styles.text}>Transportation/Storage/Communication</Text>
-          <View style={styles.rightContainer}>
-            <View style={styles.rightIcon}>
-              <Text>0.35%</Text>
+
+          <View style={styles.legendBar}>
+            <View style={[styles.leftContainer, { backgroundColor: 'red' }]}>
+              <Text style={[styles.text, { textAlign: 'left' }]} />
+            </View>
+            <Text style={styles.text}>Service</Text>
+            <View style={styles.rightContainer}>
+              <View style={styles.rightIcon}>
+                <Text>0.59%</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.legendBar}>
+            <View style={[styles.leftContainer, { backgroundColor: 'yellow' }]}>
+              <Text style={[styles.text, { textAlign: 'left' }]} />
+            </View>
+            <Text style={styles.text}>Finance</Text>
+            <View style={styles.rightContainer}>
+              <View style={styles.rightIcon}>
+                <Text>9.59%</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.legendBar}>
+            <View style={[styles.leftContainer, { backgroundColor: 'pink' }]}>
+              <Text style={[styles.text, { textAlign: 'left' }]} />
+            </View>
+            <Text style={styles.text}>Manufacturing</Text>
+            <View style={styles.rightContainer}>
+              <View style={styles.rightIcon}>
+                <Text>0.26%</Text>
+              </View>
             </View>
           </View>
         </View>
-
-        <View style={styles.legendBar}>
-          <View style={[styles.leftContainer, { backgroundColor: 'red' }]}>
-            <Text style={[styles.text, { textAlign: 'left' }]} />
-          </View>
-          <Text style={styles.text}>Service</Text>
-          <View style={styles.rightContainer}>
-            <View style={styles.rightIcon}>
-              <Text>0.59%</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.legendBar}>
-          <View style={[styles.leftContainer, { backgroundColor: 'yellow' }]}>
-            <Text style={[styles.text, { textAlign: 'left' }]} />
-          </View>
-          <Text style={styles.text}>Finance</Text>
-          <View style={styles.rightContainer}>
-            <View style={styles.rightIcon}>
-              <Text>9.59%</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={styles.legendBar}>
-          <View style={[styles.leftContainer, { backgroundColor: 'pink' }]}>
-            <Text style={[styles.text, { textAlign: 'left' }]} />
-          </View>
-          <Text style={styles.text}>Manufacturing</Text>
-          <View style={styles.rightContainer}>
-            <View style={styles.rightIcon}>
-              <Text>0.26%</Text>
-            </View>
-          </View>
-        </View>
-
-</View>
 
         <Divider style={styles.divider} />
         <View style={styles.recentTradesWrapper}>
@@ -209,7 +210,7 @@ const StockPortfolio = props => {
 
 const styles = StyleSheet.create({
   legendWrapper: {
-    paddingTop: 20,
+    paddingTop: 20
   },
   legendBar: {
     height: 'auto',
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     // backgroundColor: 'blue',
-    marginHorizontal: 15,
+    marginHorizontal: 15
   },
   leftContainer: {
     flexDirection: 'row',

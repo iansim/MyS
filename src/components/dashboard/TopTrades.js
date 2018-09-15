@@ -7,7 +7,7 @@ import { Button, Avatar, Icon } from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/dist/FontAwesome';
 // Icon.loadFont()
 
-const TopTrades = (props) => {
+const TopTrades = props => {
   const {
     rootStore: { routerStore }
   } = props
@@ -157,7 +157,7 @@ const TopTrades = (props) => {
               buttonStyle={{
                 width: 120,
                 backgroundColor: 'rgba(222, 223, 226, 1)',
-                borderRadius: 5,
+                borderRadius: 5
               }}
               titleStyle={{ fontSize: 13, color: 'red' }}
               // onPress={() => console.log('aye')}
@@ -556,4 +556,3 @@ TopTrades.propTypes = {
 }
 
 export default inject('rootStore')(observer(TopTrades))
-
