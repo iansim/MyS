@@ -13,17 +13,23 @@ const StockPortfolio = props => {
   } = props
 
   const data = [35, 53, 24, 50]
-
   const randomColor = () =>
     ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(
       0,
       7
     )
+  const color = []
+  for(let i = 0; i < data.length; i++){
+    color.push(randomColor())
+  }
+  
+
+
 
   const pieData = data.filter(value => value > 0).map((value, index) => ({
     value,
     svg: {
-      fill: randomColor(),
+      fill: color[index],
       onPress: () => alert('press' + index)
     },
     key: `pie-${index}`
@@ -39,7 +45,7 @@ const StockPortfolio = props => {
 
         <View style={styles.legendWrapper}>
           <View style={styles.legendBar}>
-            <View style={[styles.leftContainer, { backgroundColor: 'green' }]}>
+            <View style={[styles.leftContainer, { backgroundColor: color[0] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
             <Text style={styles.text}>
@@ -53,7 +59,7 @@ const StockPortfolio = props => {
           </View>
 
           <View style={styles.legendBar}>
-            <View style={[styles.leftContainer, { backgroundColor: 'red' }]}>
+            <View style={[styles.leftContainer, { backgroundColor: color[1]  }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
             <Text style={styles.text}>Service</Text>
@@ -65,7 +71,7 @@ const StockPortfolio = props => {
           </View>
 
           <View style={styles.legendBar}>
-            <View style={[styles.leftContainer, { backgroundColor: 'yellow' }]}>
+            <View style={[styles.leftContainer, { backgroundColor: color[2]  }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
             <Text style={styles.text}>Finance</Text>
@@ -77,7 +83,7 @@ const StockPortfolio = props => {
           </View>
 
           <View style={styles.legendBar}>
-            <View style={[styles.leftContainer, { backgroundColor: 'pink' }]}>
+            <View style={[styles.leftContainer, { backgroundColor: color[3] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
             <Text style={styles.text}>Manufacturing</Text>
