@@ -8,6 +8,7 @@ import SelectBrokersCompanyPage from './page/SelectBrokersCompanyPage'
 import TradeExecutionPage from './page/TradeExecutionPage'
 import TradeExecutionOptionPage from './page/TradeExecutionOptionPage'
 import DashboardPageRouter from './page/DashboardPageRouter'
+import ViewProfile from './components/dashboard/ViewProfile'
 
 // import TraderPage from './page/TraderPage'
 // import HomeScreenRouter from './page/HomeScreenRouter'
@@ -19,7 +20,8 @@ const viewMap = {
   selectBrokers: <SelectBrokersPageRouter />,
   selectBrokersCompany: <SelectBrokersCompanyPage />,
   tradeExecution: <TradeExecutionPage />,
-  tradeExecutionOption: <TradeExecutionOptionPage />
+  tradeExecutionOption: <TradeExecutionOptionPage />,
+  ViewProfile: <ViewProfile />
   // trader: <TraderPage />,
   // home: <HomeScreenRouter />
 }
@@ -33,16 +35,10 @@ class ShellBase extends React.Component {
     if (this.props.page) {
       routerStore.goTo(this.props.page, this.props.params)
     } else {
-      routerStore.goTo('dashboard', this.props.params)
+      routerStore.goTo('main', this.props.params)
     }
 
     return (
-      //       <View style={{backgroundColor: 'red'}}>
-      //   <Header
-      //   leftComponent={{ icon: 'menu', color: '#fff' }}
-      //   centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-      //   rightComponent={{ icon: 'home', color: '#fff' }}
-      // />
       <RouterView routerStore={routerStore} viewMap={viewMap} />
     )
   }

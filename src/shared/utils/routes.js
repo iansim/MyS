@@ -32,6 +32,11 @@ export const routes = [
     pattern: '/tradeExecutionOption'
   },
   {
+    name: 'ViewProfile',
+    pattern: '/ViewProfile'
+  },
+
+  {
     name: 'home',
     pattern: '/home'
   }

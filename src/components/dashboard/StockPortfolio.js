@@ -37,8 +37,9 @@ const StockPortfolio = props => {
           <PieChart style={{ height: 300 }} data={pieData} />
         </View>
 
-        <View style={styles.navBar}>
-          <View style={styles.leftContainer}>
+<View style={styles.legendWrapper}>
+        <View style={styles.legendBar}>
+        <View style={[styles.leftContainer, { backgroundColor: 'green' }]}>
             <Text style={[styles.text, { textAlign: 'left' }]} />
           </View>
           <Text style={styles.text}>Transportation/Storage/Communication</Text>
@@ -49,8 +50,8 @@ const StockPortfolio = props => {
           </View>
         </View>
 
-        <View style={styles.navBar}>
-          <View style={styles.leftContainer}>
+        <View style={styles.legendBar}>
+          <View style={[styles.leftContainer, { backgroundColor: 'red' }]}>
             <Text style={[styles.text, { textAlign: 'left' }]} />
           </View>
           <Text style={styles.text}>Service</Text>
@@ -60,6 +61,32 @@ const StockPortfolio = props => {
             </View>
           </View>
         </View>
+
+        <View style={styles.legendBar}>
+          <View style={[styles.leftContainer, { backgroundColor: 'yellow' }]}>
+            <Text style={[styles.text, { textAlign: 'left' }]} />
+          </View>
+          <Text style={styles.text}>Finance</Text>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon}>
+              <Text>9.59%</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.legendBar}>
+          <View style={[styles.leftContainer, { backgroundColor: 'pink' }]}>
+            <Text style={[styles.text, { textAlign: 'left' }]} />
+          </View>
+          <Text style={styles.text}>Manufacturing</Text>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon}>
+              <Text>0.26%</Text>
+            </View>
+          </View>
+        </View>
+
+</View>
 
         <Divider style={styles.divider} />
         <View style={styles.recentTradesWrapper}>
@@ -181,18 +208,20 @@ const StockPortfolio = props => {
 }
 
 const styles = StyleSheet.create({
-  navBar: {
+  legendWrapper: {
+    paddingTop: 20,
+  },
+  legendBar: {
     height: 'auto',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     // backgroundColor: 'blue',
-    margin: 15
+    marginHorizontal: 15,
   },
   leftContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    backgroundColor: 'green',
     width: 10,
     height: 10,
     marginRight: 10
@@ -240,6 +269,7 @@ const styles = StyleSheet.create({
   },
   newsDate: {}
 })
+
 StockPortfolio.propTypes = {
   state: PropTypes.object,
   rootStore: PropTypes.object

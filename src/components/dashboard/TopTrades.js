@@ -1,13 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { observer } from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import { View, Text, ScrollView } from 'react-native'
 import { Button, Avatar, Icon } from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/Ionicons'
 // import Icon from 'react-native-vector-icons/dist/FontAwesome';
 // Icon.loadFont()
 
-const TopTrades = () => {
+const TopTrades = (props) => {
+  const {
+    rootStore: { routerStore }
+  } = props
   return (
     //     <View
     //       style={{ flex: 1, flexDirection: 'column' }}
@@ -154,10 +157,13 @@ const TopTrades = () => {
               buttonStyle={{
                 width: 120,
                 backgroundColor: 'rgba(222, 223, 226, 1)',
-                borderRadius: 5
+                borderRadius: 5,
               }}
-              titleStyle={{ fontSize: 13, color: 'gray' }}
+              titleStyle={{ fontSize: 13, color: 'red' }}
               // onPress={() => console.log('aye')}
+              onPress={() => {
+                routerStore.goTo('ViewProfile')
+              }}
               underlayColor="transparent"
             />
           </View>
@@ -227,12 +233,7 @@ const TopTrades = () => {
               marginLeft: 10
             }}
           >
-            <Icon
-              name="heartbeat"
-              type="font-awesome"
-              color="green"
-              size={25}
-            />
+            <Icon type="font-awesome" name="caret-up" color="green" size={25} />
             <Text style={{ color: 'green', fontSize: 13, marginLeft: 5 }}>
               100
             </Text>
@@ -248,7 +249,12 @@ const TopTrades = () => {
               marginHorizontal: 10
             }}
           >
-            <Icon name="md-person-add" color="gray" size={20} />
+            <Icon
+              type="material-community"
+              name="account-plus"
+              color="gray"
+              size={20}
+            />
           </View>
         </View>
       </View>
@@ -371,7 +377,7 @@ const TopTrades = () => {
               marginLeft: 10
             }}
           >
-            <Icon name="md-arrow-dropup" color="green" size={25} />
+            <Icon type="font-awesome" name="caret-up" color="green" size={25} />
             <Text style={{ color: 'green', fontSize: 13, marginLeft: 5 }}>
               1000
             </Text>
@@ -387,7 +393,12 @@ const TopTrades = () => {
               marginHorizontal: 10
             }}
           >
-            <Icon name="md-person-add" color="gray" size={20} />
+            <Icon
+              type="material-community"
+              name="account-plus"
+              color="gray"
+              size={20}
+            />
           </View>
         </View>
       </View>
@@ -428,7 +439,7 @@ const TopTrades = () => {
         >
           <View
             style={{
-              backgroundColor: 'rgba(220,230,218,1)',
+              backgroundColor: 'rgba(244,230,224,1)',
               width: 70,
               height: 28,
               borderRadius: 5,
@@ -438,8 +449,8 @@ const TopTrades = () => {
               marginLeft: 10
             }}
           >
-            <Icon name="md-arrow-dropup" color="green" size={25} />
-            <Text style={{ color: 'green', fontSize: 13, marginLeft: 5 }}>
+            <Icon type="font-awesome" name="caret-down" color="red" size={25} />
+            <Text style={{ color: 'red', fontSize: 13, marginLeft: 5 }}>
               1000
             </Text>
           </View>
@@ -454,7 +465,12 @@ const TopTrades = () => {
               marginHorizontal: 10
             }}
           >
-            <Icon name="md-person-add" color="gray" size={20} />
+            <Icon
+              type="material-community"
+              name="account-plus"
+              color="gray"
+              size={20}
+            />
           </View>
         </View>
       </View>
@@ -495,7 +511,7 @@ const TopTrades = () => {
         >
           <View
             style={{
-              backgroundColor: 'rgba(220,230,218,1)',
+              backgroundColor: 'rgba(244,230,224,1)',
               width: 70,
               height: 28,
               borderRadius: 5,
@@ -505,8 +521,8 @@ const TopTrades = () => {
               marginLeft: 10
             }}
           >
-            <Icon name="md-arrow-dropup" color="green" size={25} />
-            <Text style={{ color: 'green', fontSize: 13, marginLeft: 5 }}>
+            <Icon type="font-awesome" name="caret-down" color="red" size={25} />
+            <Text style={{ color: 'red', fontSize: 13, marginLeft: 5 }}>
               1000
             </Text>
           </View>
@@ -521,7 +537,12 @@ const TopTrades = () => {
               marginHorizontal: 10
             }}
           >
-            <Icon name="md-person-add" color="gray" size={20} />
+            <Icon
+              type="material-community"
+              name="account-plus"
+              color="gray"
+              size={20}
+            />
           </View>
         </View>
       </View>
@@ -530,6 +551,9 @@ const TopTrades = () => {
 }
 
 TopTrades.propTypes = {
+  rootStore: PropTypes.object,
   state: PropTypes.object
 }
-export default observer(TopTrades)
+
+export default inject('rootStore')(observer(TopTrades))
+

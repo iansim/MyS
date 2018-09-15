@@ -18,7 +18,7 @@ const Trending = () => {
         share and learn together is at the heart of what we do.
       </Text>
       <Button
-        backgroundColor="#03A9F4"
+        backgroundColor="#000000"
         buttonStyle={{
           borderRadius: 0,
           marginLeft: 0,

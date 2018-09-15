@@ -1,13 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { observer } from 'mobx-react'
-import { StyleSheet, View, Text, ScrollView } from 'react-native'
-import { Button, Avatar, Divider } from 'react-native-elements'
+import { observer, inject } from 'mobx-react'
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { Button, Avatar, Divider, Header, Icon } from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/Ionicons'
 
-const ViewProfile = () => {
+const ViewProfile = (props) => {
+  const {
+    rootStore: { routerStore }
+  } = props
+
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: '#F1F0F1' }}>
+    <View
+    style={{
+      flex: 1
+    }}
+  >
+  <Header
+        leftComponent={
+          <TouchableOpacity
+            onPress={() => {
+              routerStore.goTo('dashboard', {section: 'Top Trades'})
+            }}
+          >
+            <Icon color="#ffffff" name="navigate-before" />
+          </TouchableOpacity>
+        }
+        centerComponent={{ text: 'Trade Execution', style: { color: '#fff' } }}
+        rightComponent={
+          <TouchableOpacity
+            onPress={() => {
+              routerStore.goTo('main')
+            }}
+          >
+            <Icon color="#ffffff" name="home" />
+          </TouchableOpacity>
+        }
+      />
+    <ScrollView style={{ backgroundColor: '#F1F0F1' }}>
       <View
         style={{
           flex: 1,
@@ -124,6 +154,7 @@ const ViewProfile = () => {
         />
       </View>
     </ScrollView>
+    </View>
   )
 }
 
@@ -161,6 +192,11 @@ const styles = StyleSheet.create({
 })
 
 ViewProfile.propTypes = {
-  state: PropTypes.object
+  rootStore: PropTypes.object
 }
-export default observer(ViewProfile)
+
+export default inject('rootStore')(observer(ViewProfile))
+// ViewProfile.propTypes = {
+//   state: PropTypes.object
+// }
+// export default observer(ViewProfile)
