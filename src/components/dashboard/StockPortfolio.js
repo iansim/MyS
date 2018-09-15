@@ -11,25 +11,44 @@ const StockPortfolio = props => {
   const {
     rootStore: { routerStore }
   } = props
-
-  const data = [35, 53, 24, 50]
+  const portfolioData =[
+    {name:'Transportation/Storage/Communication',amount:3500},
+    {name:'Service',amount:53000},
+    {name:'Finance',amount:2421},
+    {name:'Manufacturing',amount:5320}
+  ]
+  // const data = [35, 53, 24, 50]
   const randomColor = () =>
     ('#' + ((Math.random() * 0xffffff) << 0).toString(16) + '000000').slice(
       0,
       7
     )
-  const color = []
-  for (let i = 0; i < data.length; i++) {
-    color.push(randomColor())
+  // const color = []
+  // for (let i = 0; i < data.length; i++) {
+  //   color.push(randomColor())
+  // }
+  let portfolioTotal = 0
+  for (let data  of portfolioData) {
+    data.color = randomColor()
+    portfolioTotal = portfolioTotal + data.amount
   }
 
-  const pieData = data.filter(value => value > 0).map((value, index) => ({
-    value,
+  // const pieData = data.filter(value => value > 0).map((value, index) => ({
+  //   value,
+  //   svg: {
+  //     fill: color[index],
+  //     onPress: () => alert('press' + index)
+  //   },
+  //   key: `pie-${index}`
+  // }))
+
+  const pieData = portfolioData.map(data=>({
+    value:data.amount,
     svg: {
-      fill: color[index],
-      onPress: () => alert('press' + index)
-    },
-    key: `pie-${index}`
+      fill: data.color,
+      onPress: () => alert(`${data.name} ${Math.round(data.amount*100/portfolioTotal)} % `)
+    },  
+    key: `${data.name}`
   }))
 
   return (
@@ -41,7 +60,21 @@ const StockPortfolio = props => {
         </View>
 
         <View style={styles.legendWrapper}>
-          <View style={styles.legendBar}>
+          {portfolioData.map((data)=>(<View key={data.name}  style={styles.legendBar}>
+            <View style={[styles.leftContainer, { backgroundColor: data.color }]}>
+              <Text style={[styles.text, { textAlign: 'left' }]} />
+            </View>
+            <Text style={styles.text}>
+              {data.name}
+            </Text>
+            <View style={styles.rightContainer}>
+              <View style={styles.rightIcon}>
+                <Text>$ {data.amount}</Text>
+              </View>
+            </View>
+          </View>))}
+
+          {/* <View style={styles.legendBar}>
             <View style={[styles.leftContainer, { backgroundColor: color[0] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
@@ -53,9 +86,9 @@ const StockPortfolio = props => {
                 <Text>0.35%</Text>
               </View>
             </View>
-          </View>
+          </View> */}
 
-          <View style={styles.legendBar}>
+          {/* <View style={styles.legendBar}>
             <View style={[styles.leftContainer, { backgroundColor: color[1] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
@@ -65,9 +98,9 @@ const StockPortfolio = props => {
                 <Text>0.59%</Text>
               </View>
             </View>
-          </View>
+          </View> */}
 
-          <View style={styles.legendBar}>
+          {/* <View style={styles.legendBar}>
             <View style={[styles.leftContainer, { backgroundColor: color[2] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
@@ -77,9 +110,9 @@ const StockPortfolio = props => {
                 <Text>9.59%</Text>
               </View>
             </View>
-          </View>
+          </View> */}
 
-          <View style={styles.legendBar}>
+          {/* <View style={styles.legendBar}>
             <View style={[styles.leftContainer, { backgroundColor: color[3] }]}>
               <Text style={[styles.text, { textAlign: 'left' }]} />
             </View>
@@ -89,7 +122,7 @@ const StockPortfolio = props => {
                 <Text>0.26%</Text>
               </View>
             </View>
-          </View>
+          </View> */}
         </View>
 
         <Divider style={styles.divider} />
