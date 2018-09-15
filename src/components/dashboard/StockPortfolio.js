@@ -11,11 +11,11 @@ const StockPortfolio = props => {
   const {
     rootStore: { routerStore }
   } = props
-  const portfolioData =[
-    {name:'Transportation/Storage/Communication',amount:3500},
-    {name:'Service',amount:53000},
-    {name:'Finance',amount:2421},
-    {name:'Manufacturing',amount:5320}
+  const portfolioData = [
+    { name: 'Transportation/Storage/Communication', amount: 3500 },
+    { name: 'Service', amount: 53000 },
+    { name: 'Finance', amount: 2421 },
+    { name: 'Manufacturing', amount: 5320 }
   ]
   // const data = [35, 53, 24, 50]
   const randomColor = () =>
@@ -28,7 +28,7 @@ const StockPortfolio = props => {
   //   color.push(randomColor())
   // }
   let portfolioTotal = 0
-  for (let data  of portfolioData) {
+  for (let data of portfolioData) {
     data.color = randomColor()
     portfolioTotal = portfolioTotal + data.amount
   }
@@ -42,12 +42,15 @@ const StockPortfolio = props => {
   //   key: `pie-${index}`
   // }))
 
-  const pieData = portfolioData.map(data=>({
-    value:data.amount,
+  const pieData = portfolioData.map(data => ({
+    value: data.amount,
     svg: {
       fill: data.color,
-      onPress: () => alert(`${data.name} ${Math.round(data.amount*100/portfolioTotal)} % `)
-    },  
+      onPress: () =>
+        alert(
+          `${data.name} ${Math.round((data.amount * 100) / portfolioTotal)} % `
+        )
+    },
     key: `${data.name}`
   }))
 
@@ -60,19 +63,21 @@ const StockPortfolio = props => {
         </View>
 
         <View style={styles.legendWrapper}>
-          {portfolioData.map((data)=>(<View key={data.name}  style={styles.legendBar}>
-            <View style={[styles.leftContainer, { backgroundColor: data.color }]}>
-              <Text style={[styles.text, { textAlign: 'left' }]} />
-            </View>
-            <Text style={styles.text}>
-              {data.name}
-            </Text>
-            <View style={styles.rightContainer}>
-              <View style={styles.rightIcon}>
-                <Text>$ {data.amount}</Text>
+          {portfolioData.map(data => (
+            <View key={data.name} style={styles.legendBar}>
+              <View
+                style={[styles.leftContainer, { backgroundColor: data.color }]}
+              >
+                <Text style={[styles.text, { textAlign: 'left' }]} />
+              </View>
+              <Text style={styles.text}>{data.name}</Text>
+              <View style={styles.rightContainer}>
+                <View style={styles.rightIcon}>
+                  <Text>$ {data.amount}</Text>
+                </View>
               </View>
             </View>
-          </View>))}
+          ))}
 
           {/* <View style={styles.legendBar}>
             <View style={[styles.leftContainer, { backgroundColor: color[0] }]}>
