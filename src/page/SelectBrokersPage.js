@@ -9,7 +9,7 @@ const SelectBrokersPage = props => {
   const {
     rootStore: { routerStore }
   } = props
-  
+
   return (
     <View style={styles.container}>
       <Header

@@ -1,11 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { observer, inject } from 'mobx-react'
-import { StyleSheet, View, Image, TouchableOpacity, TextInput, StatusBar, Button } from 'react-native'
 import {
-  Header,
-  Icon
-} from 'react-native-elements'
+  StyleSheet,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  StatusBar,
+  Button
+} from 'react-native'
+import { Header, Icon } from 'react-native-elements'
 
 const BrokersSelectedCompany = props => {
   // console.log(props)
@@ -36,79 +41,75 @@ const BrokersSelectedCompany = props => {
           </TouchableOpacity>
         }
       />
-    
-      
 
       <View style={styles.selectWrapper}>
-      <View style={styles.logoWrapper}>
-      <Image
-          style={styles.logo}
-          source={require('../../images/cimb_securities.png')}
+        <View style={styles.logoWrapper}>
+          <Image
+            style={styles.logo}
+            source={require('../../images/cimb_securities.png')}
+          />
+        </View>
+
+        <StatusBar barStyle="light-content" />
+        <TextInput
+          placeholder="Login ID or Email"
+          style={styles.input}
+          placeholderTextColor="rgba(255,255,255,0.7)"
+          returnKeyType="next"
+          onSubmitEditing={() => this.passwordInput.focus()}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
         />
+        <TextInput
+          placeholder="Password"
+          style={styles.input}
+          secureTextEntry
+          placeholderTextColor="rgba(255,255,255,0.7)"
+          returnKeyType="go"
+          ref={input => (this.passwordInput = input)}
+        />
+
+        <TouchableOpacity style={styles.buttonContainer}>
+          <Button
+            small
+            title="Save"
+            color="#ffffff"
+            onPress={() => {
+              routerStore.goTo('dashboard')
+            }}
+            style={styles.buttonText}
+          >
+            Save
+          </Button>
+        </TouchableOpacity>
       </View>
-
-      <StatusBar barStyle="light-content" />
-      <TextInput
-        placeholder="Login ID or Email"
-        style={styles.input}
-        placeholderTextColor="rgba(255,255,255,0.7)"
-        returnKeyType="next"
-        onSubmitEditing={() => this.passwordInput.focus()}
-        keyboardType="email-address"
-        autoCapitalize="none"
-        autoCorrect={false}
-      />
-      <TextInput
-        placeholder="Password"
-        style={styles.input}
-        secureTextEntry
-        placeholderTextColor="rgba(255,255,255,0.7)"
-        returnKeyType="go"
-        ref={input => (this.passwordInput = input)}
-      />
-
-      <TouchableOpacity style={styles.buttonContainer}>
-        <Button
-          small
-          title="Save"
-          color="#ffffff"
-          onPress={() => {
-            routerStore.goTo('dashboard')
-          }}
-          style={styles.buttonText}
-        >
-          Save
-        </Button>
-      </TouchableOpacity>
-    </View>
-
-
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   contentWrapper: {
-    backgroundColor: '#ccc', 
-    height: '100%',
+    backgroundColor: '#ccc',
+    height: '100%'
   },
   selectWrapper: {
-    padding: 20,
+    padding: 20
   },
   logoWrapper: {
-    paddingBottom: 15,
+    paddingBottom: 15
   },
   logo: {
     alignItems: 'center',
     alignSelf: 'center',
-    width: '100%',
+    width: '100%'
   },
   input: {
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.2)',
     marginBottom: 20,
     color: '#fff',
-    paddingHorizontal: 10,
+    paddingHorizontal: 10
   },
   buttonContainer: {
     backgroundColor: '#000',

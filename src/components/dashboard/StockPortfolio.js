@@ -36,6 +36,30 @@ const StockPortfolio = props => {
           <Text style={styles.title}>Pie Chart</Text>
           <PieChart style={{ height: 300 }} data={pieData} />
         </View>
+
+
+{/* <View style={{width: '100%', height: 50, backgroundColor: 'yellow', flexDirection: 'row', padding: 15}}>
+  <View style={{backgroundColor: '#cc0000', width: 10, height: 10, marginRight: 10}}></View>
+  <View style={{backgroundColor: '#0000cc', width: 80, flexGrow: 1, height: 25, alignSelf: 'center'}}><Text>asd</Text></View>
+</View> */}
+
+<View style={styles.navBar}>
+  <View style={styles.leftContainer}>
+    <Text style={[styles.text, {textAlign: 'left'}]}>
+    </Text>
+  </View>
+  <Text style={styles.text}>
+  Transportation/Storage/Communication
+  </Text>
+  <View style={styles.rightContainer}>
+    <View style={styles.rightIcon}>
+      <Text>0.35%</Text>
+    </View>
+</View>
+</View>
+
+
+
         <Divider style={styles.divider} />
         <View style={styles.recentTradesWrapper}>
           <Text style={styles.titleRecentTrades}>Recent Trades</Text>
@@ -120,8 +144,6 @@ const StockPortfolio = props => {
           routerStore.goTo('tradeExecution')
         }}
       />
-
-    
     </ScrollView>
     // <Content>
     //   {/* <Text>
@@ -158,6 +180,35 @@ const StockPortfolio = props => {
 }
 
 const styles = StyleSheet.create({
+  navBar: {
+    height: 'auto',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    // backgroundColor: 'blue',
+    margin: 15,
+  },
+  leftContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    backgroundColor: 'green',
+    width: 10,
+    height: 10,
+    marginRight: 10,
+  },
+  rightContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    // backgroundColor: 'red',
+  },
+  rightIcon: {
+    // height: 10,
+    // width: 10,
+    resizeMode: 'contain',
+    backgroundColor: 'white',
+  },
   contentWrapper: {
     paddingHorizontal: 0,
     paddingVertical: 10

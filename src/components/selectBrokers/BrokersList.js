@@ -4,7 +4,7 @@ import { observer, inject } from 'mobx-react'
 import { StyleSheet, View } from 'react-native'
 import { List, ListItem, Text } from 'react-native-elements'
 
-const BrokersList = (props) => {
+const BrokersList = props => {
   const {
     rootStore: { routerStore }
   } = props
@@ -121,7 +121,7 @@ const BrokersList = (props) => {
           leftIcon={{ name: 'location-city' }}
         />
       </List>
-      
+
       {/* <List>
         {listBroker.map(item => (
           <ListItem
@@ -148,4 +148,3 @@ BrokersList.propTypes = {
 }
 
 export default inject('rootStore')(observer(BrokersList))
-

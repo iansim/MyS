@@ -33,7 +33,7 @@ class ShellBase extends React.Component {
     if (this.props.page) {
       routerStore.goTo(this.props.page, this.props.params)
     } else {
-      routerStore.goTo('main', this.props.params)
+      routerStore.goTo('dashboard', this.props.params)
     }
 
     return (
