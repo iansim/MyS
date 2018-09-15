@@ -38,10 +38,6 @@ const StockPortfolio = props => {
         </View>
 
 
-{/* <View style={{width: '100%', height: 50, backgroundColor: 'yellow', flexDirection: 'row', padding: 15}}>
-  <View style={{backgroundColor: '#cc0000', width: 10, height: 10, marginRight: 10}}></View>
-  <View style={{backgroundColor: '#0000cc', width: 80, flexGrow: 1, height: 25, alignSelf: 'center'}}><Text>asd</Text></View>
-</View> */}
 
 <View style={styles.navBar}>
   <View style={styles.leftContainer}>
