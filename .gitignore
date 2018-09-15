@@ -24,6 +24,7 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 yarn.lock
+ios/Podfile.lock
 # Android/IntelliJ
 #
 build/

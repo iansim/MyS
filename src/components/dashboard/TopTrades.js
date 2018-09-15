@@ -227,7 +227,7 @@ const TopTrades = () => {
               marginLeft: 10
             }}
           >
-            <Icon name="md-arrow-dropup" color="green" size={25} />
+            <Icon name='heartbeat' type='font-awesome' color="green" size={25} />
             <Text style={{ color: 'green', fontSize: 13, marginLeft: 5 }}>
               100
             </Text>
@@ -294,7 +294,7 @@ const TopTrades = () => {
               marginLeft: 10
             }}
           >
-            <Icon name="md-arrow-dropup" color="green" size={25} />
+            <Icon type='font-awesome' name="caret-up" color="green" size={25} />
             <Text style={{ color: 'green', fontSize: 13, marginLeft: 5 }}>
               1000
             </Text>
@@ -310,7 +310,7 @@ const TopTrades = () => {
               marginHorizontal: 10
             }}
           >
-            <Icon name="md-person-add" color="gray" size={20} />
+            <Icon type='material-community' name="account-plus" color="gray" size={20} />
           </View>
         </View>
       </View>
