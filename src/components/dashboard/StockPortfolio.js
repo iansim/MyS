@@ -37,24 +37,29 @@ const StockPortfolio = props => {
           <PieChart style={{ height: 300 }} data={pieData} />
         </View>
 
+        <View style={styles.navBar}>
+          <View style={styles.leftContainer}>
+            <Text style={[styles.text, { textAlign: 'left' }]} />
+          </View>
+          <Text style={styles.text}>Transportation/Storage/Communication</Text>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon}>
+              <Text>0.35%</Text>
+            </View>
+          </View>
+        </View>
 
-
-<View style={styles.navBar}>
-  <View style={styles.leftContainer}>
-    <Text style={[styles.text, {textAlign: 'left'}]}>
-    </Text>
-  </View>
-  <Text style={styles.text}>
-  Transportation/Storage/Communication
-  </Text>
-  <View style={styles.rightContainer}>
-    <View style={styles.rightIcon}>
-      <Text>0.35%</Text>
-    </View>
-</View>
-</View>
-
-
+        <View style={styles.navBar}>
+          <View style={styles.leftContainer}>
+            <Text style={[styles.text, { textAlign: 'left' }]} />
+          </View>
+          <Text style={styles.text}>Service</Text>
+          <View style={styles.rightContainer}>
+            <View style={styles.rightIcon}>
+              <Text>0.59%</Text>
+            </View>
+          </View>
+        </View>
 
         <Divider style={styles.divider} />
         <View style={styles.recentTradesWrapper}>
@@ -182,7 +187,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     // backgroundColor: 'blue',
-    margin: 15,
+    margin: 15
   },
   leftContainer: {
     flexDirection: 'row',
@@ -190,20 +195,20 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
     width: 10,
     height: 10,
-    marginRight: 10,
+    marginRight: 10
   },
   rightContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    alignItems: 'center',
+    alignItems: 'center'
     // backgroundColor: 'red',
   },
   rightIcon: {
     // height: 10,
     // width: 10,
     resizeMode: 'contain',
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   contentWrapper: {
     paddingHorizontal: 0,
