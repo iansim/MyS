@@ -4,11 +4,11 @@ import { observer } from 'mobx-react'
 import {
   StyleSheet,
   View,
-  Button,
   TextInput,
   TouchableOpacity,
   StatusBar
 } from 'react-native'
+import { Button } from 'react-native-elements'
 
 const LoginForm = props => {
   const { updateField, submitForm } = props
@@ -42,15 +42,17 @@ const LoginForm = props => {
       />
 
       <TouchableOpacity style={styles.buttonContainer}>
-        <Button
-          small
-          title="Login"
-          color="#ffffff"
-          onPress={submitForm}
-          style={styles.buttonText}
-        >
-          Login
-        </Button>
+      <Button
+              title="Login"
+              buttonStyle={{
+                width: 120,
+                backgroundColor: 'rgba(204, 204, 204, 1)',
+                borderRadius: 5
+              }}
+              textStyle={{ fontSize: 13, color: 'white' }}
+              onPress={submitForm}
+              underlayColor="transparent"
+            />
       </TouchableOpacity>
     </View>
   )
@@ -68,16 +70,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   buttonContainer: {
-    backgroundColor: '#000',
-    opacity: 0.9,
-    height: 40,
-    marginTop: 0,
-    paddingTop: 0
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: '#fff',
-    fontWeight: '700'
+    alignItems: 'center',
   }
 })
 LoginForm.propTypes = {

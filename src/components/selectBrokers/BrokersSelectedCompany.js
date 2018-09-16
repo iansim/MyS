@@ -7,10 +7,9 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
-  StatusBar,
-  Button
+  StatusBar
 } from 'react-native'
-import { Header, Icon } from 'react-native-elements'
+import { Header, Icon, Button } from 'react-native-elements'
 
 const BrokersSelectedCompany = props => {
   // console.log(props)
@@ -54,7 +53,7 @@ const BrokersSelectedCompany = props => {
         <TextInput
           placeholder="Login ID or Email"
           style={styles.input}
-          placeholderTextColor="rgba(255,255,255,0.7)"
+          placeholderTextColor="rgba(0,0,0,0.7)"
           returnKeyType="next"
           onSubmitEditing={() => this.passwordInput.focus()}
           keyboardType="email-address"
@@ -65,24 +64,30 @@ const BrokersSelectedCompany = props => {
           placeholder="Password"
           style={styles.input}
           secureTextEntry
-          placeholderTextColor="rgba(255,255,255,0.7)"
+          placeholderTextColor="rgba(0,0,0,0.7)"
           returnKeyType="go"
           ref={input => (this.passwordInput = input)}
         />
 
+    
+        
         <TouchableOpacity style={styles.buttonContainer}>
-          <Button
-            small
-            title="Save"
-            color="#ffffff"
-            onPress={() => {
-              routerStore.goTo('dashboard')
-            }}
-            style={styles.buttonText}
-          >
-            Save
-          </Button>
-        </TouchableOpacity>
+      <Button
+              title="Save"
+              buttonStyle={{
+                width: 120,
+                backgroundColor: 'rgba(204, 204, 204, 1)',
+                borderRadius: 5
+              }}
+              textStyle={{ fontSize: 13, color: 'white' }}
+              onPress={() => {
+                routerStore.goTo('dashboard')
+              }}
+              underlayColor="transparent"
+            />
+      </TouchableOpacity>
+
+
       </View>
     </View>
   )
@@ -90,7 +95,7 @@ const BrokersSelectedCompany = props => {
 
 const styles = StyleSheet.create({
   contentWrapper: {
-    backgroundColor: '#ccc',
+    backgroundColor: 'white',
     height: '100%'
   },
   selectWrapper: {
@@ -108,20 +113,13 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.2)',
     marginBottom: 20,
-    color: '#fff',
-    paddingHorizontal: 10
+    color: '#ccc',
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: '#ccc'
   },
   buttonContainer: {
-    backgroundColor: '#000',
-    opacity: 0.9,
-    height: 40,
-    marginTop: 0,
-    paddingTop: 0
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: '#fff',
-    fontWeight: '700'
+    alignItems: 'center',
   }
 })
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { observer, inject } from 'mobx-react'
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, StyleSheet } from 'react-native'
 import { Button, Avatar, Icon } from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/Ionicons'
 // import Icon from 'react-native-vector-icons/dist/FontAwesome';
@@ -140,9 +140,9 @@ const TopTrades = props => {
           </View>
         </View>
 
-        <View
+<View
           style={{
-            width: 320,
+            width: '94%',
             borderWidth: 0.5,
             borderColor: 'rgba(222, 223, 226, 1)',
             marginHorizontal: 20,
@@ -150,7 +150,49 @@ const TopTrades = props => {
             marginVertical: 10
           }}
         />
-        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+
+        <View style={styles.navBar}>
+  <View style={styles.leftContainer}>
+    <View style={[styles.text, {textAlign: 'left'}]}>
+      <Button
+              title="View Profile"
+              buttonStyle={{
+                width: 120,
+                backgroundColor: 'rgba(222, 223, 226, 1)',
+                borderRadius: 5
+              }}
+              textStyle={{ fontSize: 13, color: 'white' }}
+              onPress={() => {
+                routerStore.goTo('ViewProfile')
+              }}
+              underlayColor="transparent"
+            />
+    </View>
+  </View>
+
+  <View style={styles.rightContainer}>
+  <Button
+              title="Add User"
+              buttonStyle={{
+                width: 120,
+                backgroundColor: 'rgba(113, 154, 112, 1)',
+                borderRadius: 5
+              }}
+              textStyle={{
+                fontSize: 13,
+                color: 'white'
+              }}
+              // onPress={() => console.log('aye')}
+              underlayColor="transparent"
+            />
+  </View>
+</View>
+
+        
+
+
+
+        {/* <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
           <View style={{ flex: 1 }}>
             <Button
               title="View Profile"
@@ -159,15 +201,14 @@ const TopTrades = props => {
                 backgroundColor: 'rgba(222, 223, 226, 1)',
                 borderRadius: 5
               }}
-              titleStyle={{ fontSize: 13, color: 'red' }}
-              // onPress={() => console.log('aye')}
+              textStyle={{ fontSize: 13, color: 'white' }}
               onPress={() => {
                 routerStore.goTo('ViewProfile')
               }}
               underlayColor="transparent"
             />
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, justifyContent: 'flex-end', }}>
             <Button
               title="Add User"
               buttonStyle={{
@@ -175,16 +216,14 @@ const TopTrades = props => {
                 backgroundColor: 'rgba(113, 154, 112, 1)',
                 borderRadius: 5
               }}
-              titleStyle={{
-                fontFamily: 'regular',
+              textStyle={{
                 fontSize: 13,
                 color: 'white'
               }}
-              // onPress={() => console.log('aye')}
               underlayColor="transparent"
             />
           </View>
-        </View>
+        </View> */}
       </View>
 
       <View
@@ -549,6 +588,35 @@ const TopTrades = props => {
     </ScrollView>
   )
 }
+
+const styles = StyleSheet.create({
+  navBar: {
+    height: 60,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  leftContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    // backgroundColor: 'green'
+  },
+  rightContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    // backgroundColor: 'red',
+  },
+  rightIcon: {
+    height: 10,
+    width: 10,
+    resizeMode: 'contain',
+    backgroundColor: 'white',
+  }
+    
+})
 
 TopTrades.propTypes = {
   rootStore: PropTypes.object,

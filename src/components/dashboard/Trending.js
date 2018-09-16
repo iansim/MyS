@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react'
-import { StyleSheet, View, Image, Text } from 'react-native'
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native'
 import { Button } from 'react-native-elements'
 
-const Trending = () => {
+const Trending = (props) => {
+  const {
+    rootStore: { routerStore }
+  } = props
+
   return (
     <View style={styles.trendingWrapper}>
       <Image
@@ -17,16 +21,22 @@ const Trending = () => {
         trading advice and connect with expert investors. Allowing our users to
         share and learn together is at the heart of what we do.
       </Text>
+      <TouchableOpacity style={styles.buttonContainer}>
       <Button
-        backgroundColor="#000000"
-        buttonStyle={{
-          borderRadius: 0,
-          marginLeft: 0,
-          marginRight: 0,
-          marginBottom: 0
-        }}
-        title="View Now"
-      />
+              title="View Now"
+              buttonStyle={{
+                width: 120,
+                backgroundColor: 'rgba(204, 204, 204, 1)',
+                borderRadius: 5
+              }}
+              textStyle={{ fontSize: 13, color: 'white' }}
+              onPress={() => {
+                routerStore.goTo('dashboard')
+              }}
+              underlayColor="transparent"
+            />
+      </TouchableOpacity>
+
     </View>
   )
 }
@@ -46,9 +56,15 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     marginHorizontal: 5,
     textAlign: 'justify'
+  },
+  buttonContainer: {
+    alignItems: 'center',
   }
 })
+
 Trending.propTypes = {
-  state: PropTypes.object
+  state: PropTypes.object,
+  rootStore: PropTypes.object
 }
+
 export default observer(Trending)
