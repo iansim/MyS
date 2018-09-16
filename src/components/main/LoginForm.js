@@ -42,17 +42,17 @@ const LoginForm = props => {
       />
 
       <TouchableOpacity style={styles.buttonContainer}>
-      <Button
-              title="Login"
-              buttonStyle={{
-                width: 120,
-                backgroundColor: 'rgba(204, 204, 204, 1)',
-                borderRadius: 5
-              }}
-              textStyle={{ fontSize: 13, color: 'white' }}
-              onPress={submitForm}
-              underlayColor="transparent"
-            />
+        <Button
+          title="Login"
+          buttonStyle={{
+            width: 120,
+            backgroundColor: 'rgba(204, 204, 204, 1)',
+            borderRadius: 5
+          }}
+          textStyle={{ fontSize: 13, color: 'white' }}
+          onPress={submitForm}
+          underlayColor="transparent"
+        />
       </TouchableOpacity>
     </View>
   )
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   buttonContainer: {
-    alignItems: 'center',
+    alignItems: 'center'
   }
 })
 LoginForm.propTypes = {

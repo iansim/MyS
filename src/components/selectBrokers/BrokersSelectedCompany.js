@@ -69,25 +69,21 @@ const BrokersSelectedCompany = props => {
           ref={input => (this.passwordInput = input)}
         />
 
-    
-        
         <TouchableOpacity style={styles.buttonContainer}>
-      <Button
-              title="Save"
-              buttonStyle={{
-                width: 120,
-                backgroundColor: 'rgba(204, 204, 204, 1)',
-                borderRadius: 5
-              }}
-              textStyle={{ fontSize: 13, color: 'white' }}
-              onPress={() => {
-                routerStore.goTo('dashboard')
-              }}
-              underlayColor="transparent"
-            />
-      </TouchableOpacity>
-
-
+          <Button
+            title="Save"
+            buttonStyle={{
+              width: 120,
+              backgroundColor: 'rgba(204, 204, 204, 1)',
+              borderRadius: 5
+            }}
+            textStyle={{ fontSize: 13, color: 'white' }}
+            onPress={() => {
+              routerStore.goTo('dashboard')
+            }}
+            underlayColor="transparent"
+          />
+        </TouchableOpacity>
       </View>
     </View>
   )
@@ -119,7 +115,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc'
   },
   buttonContainer: {
-    alignItems: 'center',
+    alignItems: 'center'
   }
 })
 

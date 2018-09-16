@@ -140,7 +140,7 @@ const TopTrades = props => {
           </View>
         </View>
 
-<View
+        <View
           style={{
             width: '94%',
             borderWidth: 0.5,
@@ -152,26 +152,26 @@ const TopTrades = props => {
         />
 
         <View style={styles.navBar}>
-  <View style={styles.leftContainer}>
-    <View style={[styles.text, {textAlign: 'left'}]}>
-      <Button
-              title="View Profile"
-              buttonStyle={{
-                width: 120,
-                backgroundColor: 'rgba(222, 223, 226, 1)',
-                borderRadius: 5
-              }}
-              textStyle={{ fontSize: 13, color: 'white' }}
-              onPress={() => {
-                routerStore.goTo('ViewProfile')
-              }}
-              underlayColor="transparent"
-            />
-    </View>
-  </View>
+          <View style={styles.leftContainer}>
+            <View style={[styles.text, { textAlign: 'left' }]}>
+              <Button
+                title="View Profile"
+                buttonStyle={{
+                  width: 120,
+                  backgroundColor: 'rgba(222, 223, 226, 1)',
+                  borderRadius: 5
+                }}
+                textStyle={{ fontSize: 13, color: 'white' }}
+                onPress={() => {
+                  routerStore.goTo('ViewProfile')
+                }}
+                underlayColor="transparent"
+              />
+            </View>
+          </View>
 
-  <View style={styles.rightContainer}>
-  <Button
+          <View style={styles.rightContainer}>
+            <Button
               title="Add User"
               buttonStyle={{
                 width: 120,
@@ -185,12 +185,8 @@ const TopTrades = props => {
               // onPress={() => console.log('aye')}
               underlayColor="transparent"
             />
-  </View>
-</View>
-
-        
-
-
+          </View>
+        </View>
 
         {/* <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
           <View style={{ flex: 1 }}>
@@ -594,28 +590,27 @@ const styles = StyleSheet.create({
     height: 60,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   leftContainer: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
     // backgroundColor: 'green'
   },
   rightContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    alignItems: 'center',
+    alignItems: 'center'
     // backgroundColor: 'red',
   },
   rightIcon: {
     height: 10,
     width: 10,
     resizeMode: 'contain',
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   }
-    
 })
 
 TopTrades.propTypes = {
