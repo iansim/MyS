@@ -24,7 +24,7 @@ const Trending = props => {
       <TouchableOpacity style={styles.buttonContainer}>
         <Button
           title="View Now"
-          containerViewStyle={{width: '100%', marginLeft: 0, marginRight: 0}}
+          containerViewStyle={{ width: '100%', marginLeft: 0, marginRight: 0 }}
           buttonStyle={{
             width: '100%',
             backgroundColor: 'rgba(204, 204, 204, 1)',
@@ -68,4 +68,3 @@ Trending.propTypes = {
 }
 
 export default inject('rootStore')(observer(Trending))
-

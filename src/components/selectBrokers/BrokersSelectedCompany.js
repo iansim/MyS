@@ -72,7 +72,11 @@ const BrokersSelectedCompany = props => {
         <TouchableOpacity style={styles.buttonContainer}>
           <Button
             title="Save"
-            containerViewStyle={{width: '100%', marginLeft: 0, marginRight: 0}}
+            containerViewStyle={{
+              width: '100%',
+              marginLeft: 0,
+              marginRight: 0
+            }}
             buttonStyle={{
               width: '100%',
               backgroundColor: 'rgba(204, 204, 204, 1)',
