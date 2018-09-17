@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { observer } from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native'
 import { Button } from 'react-native-elements'
 
@@ -24,8 +24,9 @@ const Trending = props => {
       <TouchableOpacity style={styles.buttonContainer}>
         <Button
           title="View Now"
+          containerViewStyle={{width: '100%', marginLeft: 0, marginRight: 0}}
           buttonStyle={{
-            width: 120,
+            width: '100%',
             backgroundColor: 'rgba(204, 204, 204, 1)',
             borderRadius: 5
           }}
@@ -66,4 +67,5 @@ Trending.propTypes = {
   rootStore: PropTypes.object
 }
 
-export default observer(Trending)
+export default inject('rootStore')(observer(Trending))
+

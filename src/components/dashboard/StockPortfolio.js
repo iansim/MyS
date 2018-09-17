@@ -286,9 +286,10 @@ const styles = StyleSheet.create({
     paddingVertical: 10
   },
   title: {
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 24,
-    marginBottom: 20
+    marginBottom: 20,
+    paddingHorizontal: 15
   },
   recentTradesWrapper: {
     marginTop: 20,

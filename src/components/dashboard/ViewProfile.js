@@ -208,7 +208,3 @@ ViewProfile.propTypes = {
 }
 
 export default inject('rootStore')(observer(ViewProfile))
-// ViewProfile.propTypes = {
-//   state: PropTypes.object
-// }
-// export default observer(ViewProfile)
